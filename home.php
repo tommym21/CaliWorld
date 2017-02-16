@@ -29,6 +29,7 @@ $regName;
 //include layout queries queries
 include("Queries/layoutTemplate_queries.php");
 
+
 //initiiate language NAME
 foreach($languageContent as $row => $array) {
     if ($array['Subtag'] == $lang) {
@@ -43,12 +44,14 @@ foreach($regionContent as $row => $array) {
     }
 }
 
+//Include page queries
+include("Queries/homeContentQueries.php");
+
 
 //Set the page template value for use by the top level layout template
 $pageTemp = 'tempHome';
 
-//Include page queries
-include("Queries/homeQueries.php");
+
 
 
 

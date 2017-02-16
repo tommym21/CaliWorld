@@ -3,7 +3,7 @@
 
 $mediaContent = array();
 $calendarContent = array();
-$homeContent = array();
+
 
 
 //--------------------------------------------------------------------------
@@ -55,22 +55,7 @@ else {
 }
 
 
-//gets all other HOME CONTENT items from the database in the required language
-$homeContentQuery = "SELECT * FROM `HomeContent` WHERE `lang_sub_tag` ='" . $_POST['lang'] . "'";
-$homeResult = db_query($homeContentQuery);
 
-if($homeResult === false) {
-    $error = db_error();
-    // Handle error - inform administrator, log to file, show error page, etc.
-}
-else {
-    while($row = $homeResult->fetch_assoc()) {
-
-        array_push($homeContent, $row);
-    }
-
-
-}
 
 
 //--------------------------------------------------------------------------
@@ -78,7 +63,6 @@ else {
 //--------------------------------------------------------------------------
 $return['media'] = $mediaContent;
 $return['calendar'] = $calendarContent;
-$return['content'] = $homeContent;
 echo json_encode($return);
 
 ?>

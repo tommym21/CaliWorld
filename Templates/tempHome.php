@@ -36,7 +36,7 @@
 <section id="three" >
     <div class="container">
         <header class="major">
-            <h2>Keep Up-to-Date<h2>
+            <h2><?php  $content = contentSearch($homeContent, 'id', '1'); echo $content[0]['content'] ?><h2>
         </header>
 
         <div class="row">
@@ -44,7 +44,7 @@
                 <div class="box post">
                     <div class="image fit">
                         <div class="podHead">
-                            <h3>Media</h3>
+                            <h3><?php  $content = contentSearch($homeContent, 'id', '2'); echo $content[0]['content'] ?></h3>
                         </div>
                         <img src="Images/article_uk.jpg">
                     </div>
@@ -96,7 +96,7 @@
                 <div class="box post">
                     <div class="image fit">
                         <div class="podHead">
-                            <h3>Trending</h3>
+                            <h3><?php  $content = contentSearch($homeContent, 'id', '3'); echo $content[0]['content'] ?></h3>
                         </div>
                         <img src="Images/article_uk.jpg">
                     </div>
@@ -117,7 +117,7 @@
                 <div class="box post">
                     <div class="image fit">
                         <div class="podHead">
-                            <h3>Calender</h3>
+                            <h3><?php  $content = contentSearch($homeContent, 'id', '4'); echo $content[0]['content'] ?></h3>
                         </div>
                         <img src="Images/article_uk.jpg">
                     </div>

@@ -3,7 +3,7 @@ var pageData;
 
 $(function ()
 {
-    console.log(language);
+    console.log('lang: ' + language);
     //-----------------------------------------------------------------------
     // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
     //-----------------------------------------------------------------------
@@ -16,7 +16,7 @@ $(function ()
         {
             pageData = data;          //pass AJAX data to the page
             getMedia();
-            getCalendar()             //tell page to populate with data
+            getCalendar();             //tell page to populate with data
             mediaConstruct();
             calendarConstruct();
 
