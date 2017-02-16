@@ -1,0 +1,367 @@
+/*RESET*/
+
+html, body, div, span, applet, object, iframe,
+ p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    border-collapse: collapse;
+    border:none;
+    border-spacing: none;
+}
+
+/*   ===============================   */
+
+
+#popInit {
+    width:50%;
+    min-width:200px;
+    max-width: 800px;
+    margin:0 auto;
+    margin-top:100px;
+    background-color: #d1d2d4;
+    text-align: center;
+    padding:30px;
+    border-radius: 8px;
+    border: 2px #3d4045 solid;
+}
+
+#popWrap {
+    position: fixed;
+    width:100%;
+    z-index:10001;
+    top: 0;
+}
+
+
+#userTog {
+    display: block;
+    float: right;
+    padding: 10px 15px 0 15px;
+    height: 41px;
+}
+
+#userTog > button {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    float: right;
+}
+
+#login, #register {
+    width:100%;
+    display: block;
+    padding: 0 5px;
+    clear: both;
+
+}
+
+#login > fieldset {
+    float: right;
+}
+
+#userBar {
+    max-width:1500px;
+    margin:0 auto;
+}
+
+#login > fieldset > * {
+    width: auto;
+    display: inline-block;
+    float: left;
+    height: auto;
+    line-height: 27px;
+    margin: 10px;
+}
+
+#register > fieldset {
+    float: right;
+}
+
+#register > fieldset > * {
+    width: auto;
+    display: inline-block;
+    float: left;
+    height: auto;
+    line-height: 27px;
+    margin: 10px;
+}
+
+.errorBar {
+    font-size: 14px;
+    color: #e0555a;
+    text-align: right;
+    clear: both;
+    padding-right: 13px;
+}
+
+#welcome {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding: 20px 20px 0 0;
+}
+
+#logout {
+    display: inline-block;
+    margin-left:10px;
+}
+
+
+ #menu, #content, #footer {
+    width:100%;
+    display: block;
+    clear: both;
+     visibility:visible;
+}
+
+
+
+.headWrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+iFrame {
+    margin-top: -44px !important;
+}
+
+#content {
+
+}
+
+.bannerWrap {
+    -webkit-border-radius:0 !important;
+    -moz-border-radius:0 !important;
+    border-radius:0 !important;
+    padding:0 !important;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.localeWrap {
+    max-width: 1500px;
+    margin:0 auto;
+    padding: 0 15px 0 15px;
+}
+
+li {
+    text-align: left;;
+}
+
+#menu {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #3d4045 !important;
+    display: block;
+    z-index: 100;
+}
+
+.timeline-Header {
+    display: none;
+}
+
+.scroll {
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+}
+
+.twitter-timeline {
+    height:369px !important;
+}
+
+
+.pod {
+    width:33.333333%;
+    clear: none;
+    float: left;
+}
+
+.podHead {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    margin: 0 auto;
+    z-index:1;
+    bottom:0;
+}
+
+.mediaScroll {
+    overflow: hidden;
+    height:100%;
+}
+
+#menu a {
+    color: #ffffff;
+}
+
+.float {
+    display: block;
+    position: relative;
+    clear: none;
+    float: left;
+}
+
+.mediaImage {
+    width:100px;
+    margin:0 auto;
+}
+
+.mediaImage img {
+    width:100%;
+}
+
+.mediaContent {
+    width:100%;
+    clear: both;
+    display: block;
+    padding-top: 10px;
+    border-top: 1px solid #d1d2d4;
+    font-size:18px;
+}
+
+.mediaContent p {
+
+}
+
+.mediaTitle {
+    max-width:110px;
+    margin:0 auto;
+    padding:15px 10px 0 10px;
+}
+
+.mainMenu li {
+    display: inline-block;
+    width:162px;
+    text-align: center;
+    border-right:1px solid #ffffff;
+
+}
+
+.firstContainer {
+    margin-top:70px;
+}
+
+#footer {
+    background-color: #3d4045;
+}
+
+.headLeft {
+    float: left;
+}
+
+.headRight {
+    float: right;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+#Exersizes, #Routine {
+    background-color: #949494;
+    text-align: center;
+}
+
+#Exersizes:hover, #Routine:hover {
+    border-color: #e0555a !important;
+    background-color: #3d4045;
+    cursor: pointer;
+}
+
+.active {
+    border-color: #e0555a !important;
+    background-color: #3d4045 !important;
+}
+
+.sort {
+    width:300px;
+    float: right;
+
+}
+
+form {
+    width:100%;
+}
+
+.member {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+#print, #export {
+    float: left;
+}
+
+#increaseCycle, #addExercise {
+    float: right;
+}
+
+.exItem {
+    background-color: #f2f2f2;
+    border: 1px solid #333333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom:20px;
+}
+
