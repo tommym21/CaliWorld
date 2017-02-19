@@ -12,8 +12,10 @@
         ?>
 
         <button  class="button" onclick="saveModal();"" >Save</button>
+        <button  class="button" onclick="loadModal();"" >Load Routine</button>
         <a id="save" style="display: none !important;" class="button nyroModal" href="#saveModal"" >Save</a>
-        <p class="errorBar" style="display: none;"><br /><br /></p>
+        <a id="load" style="display: none !important;" class="button nyroModal" href="#loadModal"" >Load</a>
+        <p class="errorBar" style="display: none;"><br /><br /></p> <!----  Not needed?-->
 
         <?php
     }
@@ -46,13 +48,7 @@
     <hr>
 </div>
 
-<div id="routineWrap" style="width: 100%;">
-
-
-
-
-
-</div>
+<div id="routineWrap" style="width: 100%;"></div>
 
 <div  style="width: 100%;">
     <button id='clearButton' class="button special">Clear</button>
@@ -114,9 +110,22 @@
     <div style="margin: 0 auto;">
         <h4>Are you sure yo want to save this routine?</h4>
 
-        <a id='saveClose' class="button nyroModalClose" href="#">Cancel</a>
+        s
         <button style="float: left;" type="submit" class="button special" onclick="routineSave(login_user);">Save</button>
 
+    </div>
+
+
+</div>
+<!------------------------------------------------->
+
+<!------------ Routine load modal ----------------->
+<div id="loadModal" style="display: none;width: 600px;">
+
+    <div style="margin: 0 auto;">
+        <h4>There are currently no saved routines for <?php echo $login_session ?></h4>
+
+        <a id='loadClose' class="button nyroModalClose" href="#">Cancel</a>
     </div>
 
 

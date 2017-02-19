@@ -34,17 +34,17 @@ $(function ()
     $.ajax({
         url: 'Queries/trainingQueries.php',                  //the script to call to get data
         type: 'POST',
-        data: ({lang: language}),
+        data: ({lang: language, user:login_user}),
         dataType: 'json',                //data format
         success: function(data)          //on recieve of reply
         {
-            console.log(data.array1);
-            console.log(data.array2);
+
             pageData = data;
 
             getExercises();               //tell page to populate with data
             exerciseConstruct();
             routineConstruct();
+            popLoadModal();
             console.log(pageData);
 
         }
@@ -271,7 +271,10 @@ function jsonRoutine (name, sets, lang) {
     var JSON = '{ "Name" : "' +name+ '", "Sets" : "' +sets+ '", "Routine" : [';
 
     for(var i=1;i<(exCount+1);i++){
-        JSON += '{ "Exercise" : "' +$('#title' + i).html()+ '" , "Sets" : "' +$('#exercise' + i).val()+ '"}, ';
+        JSON += '{ "Exercise" : "' +$('#title' + i).html()+ '" , "Sets" : "' +$('#exercise' + i).val()+ '"}';
+        if(i != exCount){
+            JSON += ', ';
+        }
     }
 
     JSON += '] }';
@@ -282,6 +285,13 @@ function jsonRoutine (name, sets, lang) {
 
 function routineTableConstruct(JSON){
     //CONSTRUCT AND RETURN TABLE HERE
+}
+
+function loadModal () {
+
+    var link = document.getElementById('load');
+    link.click();
+
 }
 
 function saveModal () {
@@ -391,8 +401,67 @@ function exportRoutine() {
 
 }
 
+function popLoadModal(){
+
+    //Populate load modal with saved routine names if the exist
+    if(pageData['savedRoutines'].length > 0){
+        //empty the load modal dialog of current message
+        document.getElementById('loadModal').innerHTML = '';
+
+        //populate the modal with the list
+        var string = '';
+        for(var i=0;i<pageData['savedRoutines'].length;i++){
+            string += '<p><input class="loadRadio" type="radio" name="loadRadio" value="' + pageData['savedRoutines'][i].routineName + '" ><label style="display:inline-block;" for="' + pageData['savedRoutines'][i].routineName + '" >' + pageData['savedRoutines'][i].routineName + '</label><br /></p>';
+        }
+
+        string += '<button id="loadSel" class="button special" onclick ="loadRoutine();">Load</button><a id="loadClose" class="button nyroModalClose" href="#">Cancel</a>';
+
+        document.getElementById('loadModal').innerHTML = string;
+    }
+
+}
+
+// FUNCTION TO POPULATE GET THE ROUTINE JSON OF THE SELECTED ROUTINE
+function loadRoutine() {
+    var radios = document.getElementsByName('loadRadio');
+    var routineName;
+    var routineJSON;
+
+    for(var i=0;i<radios.length;i++){
+        if(radios[i].checked){
+            routineName = radios[i].value;
+        }
+    }
+
+    for(var i=0;i<pageData['savedRoutines'].length;i++){
+        if(pageData['savedRoutines'][i].routineName === routineName){
+            routineJSON = pageData['savedRoutines'][i].routineJSON;
+        }
+    }
+
+    document.getElementById('loadClose').click();
+    popRoutine(routineJSON);
+}
+
 // FUNCTION TO POPULATE THE ROUTINE INTERFACE WITH A ROUTINE BASED OF JSON format
-function popRoutine(user, name) {
+function popRoutine(json){
+
+    console.log(json);
+    var routine = JSON.parse(json);
+    console.log(routine);
+    var html = '';
+
+    var exCount = 1;
+
+    document.getElementById('routineName').value = routine.Name;
+    document.getElementById('cycles').innerHTML = routine.Sets;
+
+    for(var i=0;i<routine.Routine.length;i++){
+        html += '<div class="exItem" ><div style="display: inline-block;"><h4 id="title' +exCount+ '">' + routine.Routine[i].Exercise + '</h4><h5 >Sets: </h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="' + routine.Routine[i].Sets + '" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div style="float:right;font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>'
+        exCount += 1;
+    }
+
+    $('#routineWrap').html(html);
 
 }
 
@@ -418,20 +487,21 @@ function moveExItem(node, n) {
         index++;
     }
 
+    console.log(index);
 
 
     if(n == 1){
-        if(index > 1) {
+        if(index > 0) {
             item.parentElement.removeChild(item);
-            region.insertBefore(newNode, region.children[index-2]);
+            region.insertBefore(newNode, region.children[index-1]);
             newNode.getElementsByTagName('input')[0].value = sets;
         }
 
     }
     else {
-        if(index < length) {
+        if(index < length-1) {
             item.parentElement.removeChild(item);
-            region.insertBefore(newNode, region.children[index]);
+            region.insertBefore(newNode, region.children[index+1]);
             newNode.getElementsByTagName('input')[0].value = sets;
         }
     }
@@ -439,8 +509,10 @@ function moveExItem(node, n) {
 }
 
 
-// Load the correct tab based on locally stored variable
+
 $( document ).ready(function() {
+
+    //Load the correct tab based on locally stored variable
     var tab = localStorage.getItem('trainingTab');
 
     if(tab != null){

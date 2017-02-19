@@ -11,6 +11,7 @@ if(!(function_exists('db_connect'))){
 
 $exerciseContent = array();
 $saveMessageContent = array();
+$savedRoutineContent = array();
 
 //--------------------------------------------------------------------------
 // 2) Query database for data
@@ -50,6 +51,23 @@ else {
 }
 
 
+$savedRoutinesQuery = "SELECT * FROM `Routine` WHERE `userName`='" . $_POST['user'] . "'";
+$savedRoutinesResult = db_query($savedRoutinesQuery);
+
+if($savedRoutinesResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $savedRoutinesResult->fetch_assoc()) {
+
+        array_push($savedRoutineContent, $row);
+    }
+
+
+}
+
+
 
 //--------------------------------------------------------------------------
 // 3) echo result as json
@@ -63,9 +81,12 @@ if(isset($saveMessageContent)){
     $return['saveMessage'] = $saveMessageContent;
 }
 
-//if(isset($array2)){
-//    $return['array2'] = $array2;
-//}
+if(isset($savedRoutineContent)){
+    $return['savedRoutines'] = $savedRoutineContent;
+}
+
+
+
 
 echo json_encode($return);
 
