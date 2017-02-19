@@ -139,9 +139,9 @@ html {
 .errorBar {
     font-size: 14px;
     color: #e0555a;
-    text-align: right;
     clear: both;
     padding-right: 13px;
+    width:auto;
 }
 
 #welcome {
@@ -334,6 +334,7 @@ li {
 .sort {
     width:300px;
     float: right;
+    margin-bottom: 2em;
 
 }
 
@@ -353,7 +354,7 @@ form {
     float: left;
 }
 
-#increaseCycle, #addExercise {
+#increaseCycle, #addExercise, #clearButton {
     float: right;
 }
 
@@ -363,5 +364,35 @@ form {
     padding: 20px;
     border-radius: 8px;
     margin-bottom:20px;
+}
+
+#exBox {
+    height:410px;
+}
+
+#routineName {
+    width:200px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.fRight {
+    float: right;
+}
+
+.fLeft {
+    float: left;
+}
+
+.topBar {
+    background: white;
+    border: 4px solid #777;
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+    color: #545454;
+    padding:20px;
+    margin-top: 10px;
+    z-index: 10500;
 }
 

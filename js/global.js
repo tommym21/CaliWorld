@@ -1,7 +1,20 @@
+
+
+
 // =================================
 // Start Layout template functions:
 // =================================
 
+var localeSupport = false;
+//Determines whether locale and option arguement for localeCompare method are supported by the client
+function localeCompareSupportsLocales() {
+    try {
+        'foo'.localeCompare('bar', 'i');
+    } catch (e) {
+        localeSupport = false;
+    }
+    localeSupport = true;
+}
 
 // Retrieves cookies from domain
 function getCookie(name) {

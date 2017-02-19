@@ -127,8 +127,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         var language = '<?php echo $lang; ?>';
         var region = '<?php echo $region; ?>';
+        var login_user = '<?php if($loggedIn) echo $login_session ?>';
 
         $(document).ready(function () {
+
+
+            //Detect whether locales and options arguments for localeCompare are supported
+            localeCompareSupportsLocales();
 
             if(typeof(getCookie('regionOverride')) === "undefined" ){
 
@@ -218,20 +223,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="popInit" style="display:none">
 
         <h5>
-            Welcome to Calisthenics World
+            Good Morning <?php  $mainName = contentSearch($layoutContent, 'ID', 11); echo $mainName[0]['content'] ?>
         </h5>
 
         <p>
-            Please select a region and language below:
+            <?php  $mainName = contentSearch($layoutContent, 'ID', 12); echo $mainName[0]['content'] ?>
             <br />
             <i style="font-size:12px;">
-                You can alter these settings at any time by using the controls to the top right of the window.
+                <?php  $mainName = contentSearch($layoutContent, 'ID', 13); echo $mainName[0]['content'] ?>
             </i>
         </p>
 
         <br /><br />
 
-        <label>Region:</label>
+        <label><?php  $mainName = contentSearch($layoutContent, 'ID', 14); echo $mainName[0]['content'] ?>:</label>
         <br />
 
 
@@ -251,7 +256,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <br /><br />
 
-        <label>Language:</label><br />
+        <label><?php  $mainName = contentSearch($layoutContent, 'ID', 15); echo $mainName[0]['content'] ?>:</label><br />
 
         <select id="langInit" onchange="selLangChange(this.value)">
 
@@ -273,11 +278,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         <!-- Locale initiation JS SUMBIT-->
-        <button class="button" onclick="localeInit(document.getElementById('regionInit').value, document.getElementById('langInit').value);">Continue</button>
+        <button class="button" onclick="localeInit(document.getElementById('regionInit').value, document.getElementById('langInit').value);"><?php  $mainName = contentSearch($layoutContent, 'ID', 17); echo $mainName[0]['content'] ?></button>
 
         <br /><br />
 
-        <p>By continuing to use the Calisthenics World website, you will be agreeing to the <a href="#">Use Of Cookies</a> while using the website.</p>
+        <p><?php  $mainName = contentSearch($layoutContent, 'ID', 16); echo $mainName[0]['content'] ?></p>
 
         <!--End Locale initiation wrap-->
     </div>
@@ -313,7 +318,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </fieldset>
             </form>
 
-            <div id="errorBar" class="errorBar" >
+            <div id="errorBar" class="errorBar fRight" >
                 <?php echo $error; ?>
             </div>
 
@@ -327,13 +332,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </fieldset>
             </form>
 
-            <div id="errorBar2" class="errorBar" >
+            <div id="errorBar2" class="errorBar fRight" >
                 <?php echo $error2; ?>
             </div>
 
             <?php
         }else {
-            echo '<p id="welcome">Good day ' . $login_session . '&nbsp;&nbsp;| <a id="logout" href="logout.php" >Log Out</a></p>';
+            $mainName = contentSearch($layoutContent, 'ID', 10);
+            echo '<p id="welcome">' . $login_session . '&nbsp;&nbsp;| <a id="logout" href="logout.php" >' . $mainName[0]['content'] . '</a></p>';
 
         }
         ?>
@@ -434,8 +440,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- footer start -->
 <div id="footer">
-    Footer Area<br />
-    Search <a href="#">Calisthenics World</a>
+    <a href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 3); echo $mainName[0]['content'] ?></a>
 </div>
 <!-- footer end -->
 

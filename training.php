@@ -59,7 +59,7 @@ foreach($regionContent as $row => $array) {
 $pageTemp = 'tempTraining';
 
 //Include page queries
-
+include("Queries/trainingContentQueries.php");
 
 
 // Initiate the LAYOUT template view  - this will include the PAGE layout view

@@ -10,6 +10,7 @@ if(!(function_exists('db_connect'))){
 }
 
 $exerciseContent = array();
+$saveMessageContent = array();
 
 //--------------------------------------------------------------------------
 // 2) Query database for data
@@ -31,9 +32,24 @@ else {
 
 }
 
-//$query2 = "SELECT * FROM `Lang_Sub_Tag`";
-//$result2 = db_query($query2);
-//$array2 = mysqli_fetch_row($result2);
+
+$saveMessageQuery = "SELECT * FROM `TrainingContent` WHERE `lang_sub_tag`='" . $_POST['lang'] . "' AND (`ID`='6' OR `ID`='7')";
+$saveMessageResult = db_query($saveMessageQuery);
+
+if($saveMessageResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $saveMessageResult->fetch_assoc()) {
+
+        array_push($saveMessageContent, $row);
+    }
+
+
+}
+
+
 
 //--------------------------------------------------------------------------
 // 3) echo result as json
@@ -41,6 +57,10 @@ else {
 
 if(isset($exerciseContent)){
     $return['exercises'] = $exerciseContent;
+}
+
+if(isset($saveMessageContent)){
+    $return['saveMessage'] = $saveMessageContent;
 }
 
 //if(isset($array2)){

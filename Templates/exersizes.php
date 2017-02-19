@@ -1,17 +1,21 @@
 
-<!--TO BE REMOVED-->
+
 <?php
-//echo '<br />Lang: ' . $lang .'<br />';
-//echo 'Region: ' . $region;
-//echo '<br />';
-//?>
+
+//    Gets string value for the word 'Difficulty' in the required language to store as JS var
+    $difficulty = contentSearch($trainingContent, 'ID', 3);
+    echo '<script>var difficulty = "' .  $difficulty[0]['content'] . '";</script>';
+
+?>
 <!--==================-->
+
+
 <div class="sort">
 <h5>Sort: </h5>
-    <select>
-        <option>Body Part</option>
-        <option>Relevance</option>
-        <option>Difficulty</option>
+    <select onchange="exerciseSort(this.value, language, localeSupport);">
+        <option value="body_part"  ><?php  $mainName = contentSearch($trainingContent, 'ID', 4); echo $mainName[0]['content'] ?></option>
+        <option value="relevance" ><?php  $mainName = contentSearch($trainingContent, 'ID', 5); echo $mainName[0]['content'] ?></option>
+        <option value="difficulty" ><?php  $mainName = contentSearch($trainingContent, 'ID', 3); echo $mainName[0]['content'] ?></option>
     </select>
 
 </div>
