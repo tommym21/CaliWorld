@@ -59,7 +59,7 @@ foreach($regionContent as $row => $array) {
 
 
 //Set the page template value for use by the top level layout template
-$pageTemp = 'tempTrainingMap';
+$pageTemp = 'tempTrainingMapTest';
 
 //Include page queries
 

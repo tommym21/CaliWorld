@@ -54,6 +54,9 @@ function setRegionOverride(reg, reload) {
 //Sets a language preference cookie for the whole domain with optional reload param
 function setLanguageOverride(lang, reload) {
 
+    //Flush any routine state captured from previous language
+    localStorage.setItem('routineState', '');
+
     var now = new Date();
     var time = now.getTime();
     var expireTime = time + 1000*36000;

@@ -219,7 +219,7 @@ form {
 
 label {
     color: #545454;
-    display: block;
+    display: inline-block;
     font-size: 0.9em;
     font-weight: 700;
     margin: 0 0 1em 0;
@@ -984,7 +984,7 @@ input[type="button"]:disabled,
 /* Header */
 
 #skel-layers-wrapper {
-    padding-top: 3em;
+    padding-top: 0;
 }
 
 body.landing #skel-layers-wrapper {
@@ -1004,7 +1004,6 @@ body.landing #skel-layers-wrapper {
     /*height: 3em;*/
     left: 0;
     line-height: 3em;
-    position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;

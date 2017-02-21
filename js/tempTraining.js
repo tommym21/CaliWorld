@@ -19,6 +19,12 @@ function contentToggle(id) {
 
         localStorage.setItem("trainingTab", id);
 
+        var routineState = localStorage.getItem('routineState');
+
+        if(routineState != null && routineState != ''){
+            popRoutine(routineState);
+        }
+
     }
 
 }
@@ -195,6 +201,8 @@ function decreaseCycle() {
 
 function popCycle(n){
     $('#cycles').html(n);
+
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 }
 
 
@@ -210,6 +218,8 @@ function addRep(button, exercise) {
     }
 
     $(exercise).val(n+1);
+
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 }
 
 function decreaseRep(button, exercise) {
@@ -228,6 +238,8 @@ function decreaseRep(button, exercise) {
     }
 
     $(exercise).val(n-1);
+
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 }
 
 
@@ -235,6 +247,8 @@ function removeExItem(ele) {
     var item = ele.parentElement.parentElement;
 
     item.parentNode.removeChild(item);
+
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 }
 
 function addExItem(id) {
@@ -254,9 +268,9 @@ function addExItem(id) {
     string += '<div class="exItem" ><div style="display: inline-block;"><h4 id="title' +exCount+ '">' +item.title+ '</h4><h5 >Sets: </h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="1" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div style="float:right;font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>';
 
 
-    $('#routineWrap').append(string);
-
-
+    // $('#routineWrap').append(string);
+    document.getElementById('routineWrap').innerHTML += string;
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 
 }
 
@@ -461,7 +475,8 @@ function popRoutine(json){
         exCount += 1;
     }
 
-    $('#routineWrap').html(html);
+    document.getElementById('routineWrap').innerHTML = html;
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 
 }
 
@@ -506,6 +521,24 @@ function moveExItem(node, n) {
         }
     }
 
+    //Save state in local storage
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
+
+}
+
+
+function clearRoutine() {
+    document.getElementById('routineWrap').innerHTML = '';
+    document.getElementById('routineName').value = '';
+    document.getElementById('cycles').innerHTML = '1';
+
+    document.getElementById('clearClose').click();
+
+    localStorage.setItem('routineState', '');
+}
+
+function nameChange() {
+    localStorage.setItem('routineState', jsonRoutine(document.getElementById('routineName').value, document.getElementById('cycles').innerHTML, language ));
 }
 
 

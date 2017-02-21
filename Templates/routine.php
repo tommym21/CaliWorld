@@ -37,7 +37,7 @@
 
 <div  style="width: 100%;">
     <h4 style="display: inline-block;margin: 0;">Routine Name:</h4>&nbsp;
-    <input type="text" id="routineName" />
+    <input type="text" id="routineName" onchange="nameChange();"/>
     <h4 style="display: inline-block;margin: 0;">Cycles:</h4>&nbsp;&nbsp;<h4 style="display: inline-block;margin: 0;" id="cycles">1</h4>
     <p class="errorBar" style="display: none;"><br /><br /></p>
 
@@ -51,7 +51,7 @@
 <div id="routineWrap" style="width: 100%;"></div>
 
 <div  style="width: 100%;">
-    <button id='clearButton' class="button special">Clear</button>
+    <a id="clearButton" class="button special nyroModal" href="#clearModal" >Clear</a>
 </div>
 
 
@@ -126,6 +126,21 @@
         <h4>There are currently no saved routines for <?php echo $login_session ?></h4>
 
         <a id='loadClose' class="button nyroModalClose" href="#">Cancel</a>
+    </div>
+
+
+</div>
+<!------------------------------------------------->
+
+<!------------ Clear Routine modal ----------------->
+<div id="clearModal" style="display: none;width: 600px;">
+
+    <div style="margin: 0 auto;">
+        <h4>Are you sure you would like to clear your current routine?</h4>
+        <p>Unsaved changes may be lost.</p>
+
+        <a id='clearClose' class="button nyroModalClose" href="#">Cancel</a>
+        <button class="button special" onclick="clearRoutine();">Clear</button>
     </div>
 
 
