@@ -1,5 +1,3 @@
-
-
 <div class="container firstContainer">
     <div class="row">
         <h4>Search Map</h4>
@@ -7,39 +5,26 @@
         <form style="padding-top: 10px">
 
             <div class="pod">
-                <input type="checkbox" id="park" name="park" >
+                <input type="checkbox" id="park" name="park" checked onchange="mapSearch();">
                 <label for="park">Park</label>
 
                 <div style="clear: both;padding-bottom: 45px;"></div>
             </div>
 
             <div class="pod">
-                <input type="checkbox" id="trainingequiptment" name="trainingequiptment" >
+                <input type="checkbox" id="trainingequiptment" name="trainingequiptment" onchange="mapSearch();" >
                 <label for="trainingequiptment">Training Equiptment</label>
 
                 <div style="clear: both;padding-bottom: 45px;"></div>
             </div>
 
             <div class="pod">
-                <input type="checkbox" id="affiliate" name="affiliate" >
+                <input type="checkbox" id="affiliate" name="affiliate" onchange="mapSearch();" >
                 <label for="affiliate">WSWF Affiliate</label>
 
                 <div style="clear: both;padding-bottom: 45px;"></div>
             </div>
 
-            <div class="pod">
-                <label for="near">Near: </label><br/>
-                <input type="text" id="near" name="near" >
-
-                <div style="clear: both;padding-bottom: 45px;"></div>
-            </div>
-
-            <div class="12u" style="clear: both;">
-                <ul class="actions">
-                    <li><input type="submit" value="Search"></li>
-                    <li><input type="reset" value="Reset" class="alt"></li>
-                </ul>
-            </div>
         </form>
 
     </div>
@@ -48,7 +33,21 @@
 
 <div class="container">
 
-    <iframe width="600" height="450" frameborder="0" style="border:0; margin-top:0 !important;width: 100%;"
-            src="https://www.google.com/maps/embed/v1/search?q=outdoor%20fitness%20equiptment&key=AIzaSyB7am_QM4OcNMdko6WKDg_t_neDPqxg1PQ" allowfullscreen></iframe>
+
+
+    <div id="gmap" style="with:300px;height:250px;"></div>
 
 </div>
+
+<script src="js/locations.js"></script>
+<script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyDh6moMbUVUvoe2BZ3DMOCF2xjJ7OPG4Pc&language=<?php echo $lang ?>"></script>
+<script src="Maplace/maplace.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        new Maplace({
+            show_markers: true,
+            locations: _parks_<?php echo $lang ?>,
+            controls_on_map: false
+        }).Load();
+    });
+</script>

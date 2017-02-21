@@ -1,4 +1,4 @@
-var parks_en = [
+var _parks_en = [
     {
         lat: 45.9,
         lon: 10.9,
@@ -26,7 +26,7 @@ var parks_en = [
     }
 ];
 
-var training_en = [
+var _training_en = [
     {
         lat: 5.9,
         lon: 10.9,
@@ -54,7 +54,35 @@ var training_en = [
     }
 ];
 
-var affiliates_en = [
+var _affiliates_en = [
+    {
+        lat: 5.9,
+        lon: 10.9,
+        title: 'Title A1',
+        html: '<h3>Content A1</h3>',
+        icon: 'http://maps.google.com/mapfiles/markerA.png',
+    },
+    {
+        lat: 76.8,
+        lon: 1.7,
+        title: 'Title B1',
+        html: '<h3>Content B1</h3>',
+        icon: 'http://maps.google.com/mapfiles/markerB.png',
+    },
+    {
+        lat: 42.5,
+        lon: -1.1,
+        title: 'Title C1',
+        html: [
+            '<h3>Content C1</h3>',
+            '<p>Lorem Ipsum..</p>'
+        ].join(''),
+        zoom: 8,
+        icon: 'http://maps.google.com/mapfiles/markerC.png'
+    }
+];
+
+var _parks_cmn = [
     {
         lat: 5.9,
         lon: 10.9,
@@ -83,7 +111,7 @@ var affiliates_en = [
 ];
 
 
-var locations = {"_parks_en" : parks_en, "_training_en" : training_en, "_affiliates_en": affiliates_en, };
+var locations = {"_parks_en" : _parks_en, "_training_en" : _training_en, "_affiliates_en": _affiliates_en };
 
 
 
