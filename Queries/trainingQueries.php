@@ -12,6 +12,7 @@ if(!(function_exists('db_connect'))){
 $exerciseContent = array();
 $saveMessageContent = array();
 $savedRoutineContent = array();
+$setsContent = array();
 
 //--------------------------------------------------------------------------
 // 2) Query database for data
@@ -67,6 +68,22 @@ else {
 
 }
 
+$setsQuery = "SELECT * FROM `TrainingContent` WHERE `ID`='16' AND `lang_sub_tag`='" . $_POST['lang'] . "'";
+$setsResult = db_query($setsQuery);
+
+if($setsResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $setsResult->fetch_assoc()) {
+
+        array_push($setsContent, $row);
+    }
+
+
+}
+
 
 
 //--------------------------------------------------------------------------
@@ -85,7 +102,9 @@ if(isset($savedRoutineContent)){
     $return['savedRoutines'] = $savedRoutineContent;
 }
 
-
+if(isset($setsContent)){
+    $return['sets'] = $setsContent;
+}
 
 
 echo json_encode($return);

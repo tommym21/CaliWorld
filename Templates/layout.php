@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         } else {
             //Failed login
-            $error = "Your Login Name or Password is invalid";
+            $error =
             $logShow = 'true';
         }
     }
@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($count === 1) {
             //Username already exists
-            $error2 = 'Sorry, this username is already in use, please chose a new one.';
+            $error2 = contentSearch($layoutContent, 'ID', 19)[0]['content'];
             $registerShow = 'true';
 
         } else {
@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($regResult) {
                 header("location: success.html");
             } else {
-                $error2 = 'There was an error.';
+                $error2 = contentSearch($layoutContent, 'ID', 22)[0]['content'];
                 $registerShow = 'true';
             }
         }
@@ -129,6 +129,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         var region = '<?php echo $region; ?>';
         var login_user = '<?php if($loggedIn) echo $login_session ?>';
 
+
+        var userLength = '<?php  $mainName = contentSearch($layoutContent, 'ID', 20); echo $mainName[0]['content'] ?>';
+        var passLength = '<?php  $mainName = contentSearch($layoutContent, 'ID', 21); echo $mainName[0]['content'] ?>';
+
         $(document).ready(function () {
 
 
@@ -179,7 +183,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             var pass = true;
 
             if(usernameCount < 5) {
-                document.getElementById('errorBar2').innerHTML = "Username must be 5 characters long.";
+                document.getElementById('errorBar2').innerHTML = userLength;
                 plus = true;
                 pass=false;
             }
@@ -187,10 +191,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if(passwordCount < 5){
 
                 if(plus){
-                    document.getElementById('errorBar2').innerHTML += "Password must be 5 characters long.";
+                    document.getElementById('errorBar2').innerHTML += passLength;
                 }
                 else {
-                    document.getElementById('errorBar2').innerHTML = "Password must be 5 characters long.";
+                    document.getElementById('errorBar2').innerHTML = passLength;
                 }
 
                 pass = false;
