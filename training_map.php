@@ -40,8 +40,7 @@ $regName;
 //include layout queries queries
 include("Queries/layoutTemplate_queries.php");
 
-//include layout queries queries
-include("Queries/layoutTemplate_queries.php");
+
 
 //initiiate language NAME
 foreach($languageContent as $row => $array) {
@@ -63,6 +62,9 @@ $pageTemp = 'tempTrainingMap';
 
 //Include page queries
 include("Queries/trainingMapContentQueries.php");
+
+//include location Queries
+include("Queries/locationQuiries.php");
 
 
 // Initiate the LAYOUT template view  - this will include the PAGE layout view

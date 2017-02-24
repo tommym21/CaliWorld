@@ -10,7 +10,6 @@ function mapSearch() {
     if(training) locationString += '_training';
     if(affiliate) locationString += '_affiliate';
 
-    locationString += '_' + language;
 
     //clear the map
     document.getElementById('gmap').innerHTML ='';
@@ -25,3 +24,4 @@ function mapSearch() {
     }).Load();
 
 }
+

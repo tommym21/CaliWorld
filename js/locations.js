@@ -1,117 +1,96 @@
-var _parks_en = [
-    {
-        lat: 45.9,
-        lon: 10.9,
-        title: 'Title A1',
-        html: '<h3>Content A1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerA.png',
-    },
-    {
-        lat: 44.8,
-        lon: 1.7,
-        title: 'Title B1',
-        html: '<h3>Content B1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerB.png',
-    },
-    {
-        lat: 51.5,
-        lon: -1.1,
-        title: 'Title C1',
-        html: [
-            '<h3>Content C1</h3>',
-            '<p>Lorem Ipsum..</p>'
-        ].join(''),
-        zoom: 8,
-        icon: 'http://maps.google.com/mapfiles/markerC.png'
+
+
+var parks = [];
+var training = [];
+var affiliates = [];
+var parks_training;
+var parks_affiliates;
+var training_affiliates;
+var parks_training_affiliates;
+
+var locations;
+
+
+$(function ()
+{
+    console.log(language);
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({
+        url: 'Queries/locationQueries.php',                  //the script to call to get data
+        type: 'POST',
+        data: ({lang: language}),
+        dataType: 'json',                //data format
+        success: function(data)          //on recieve of reply
+        {
+
+            locationConstruct(data);
+        }
+    });
+});
+
+function locationConstruct(data){
+    var locs = data['locations'];
+    var content = data['locationContent'];
+
+    for(var i =0;i<locs.length;i++){
+
+        var id = locs[i].ID;
+        var contentIndex;
+
+        for(var x=0;x<content.length;x++){
+            if(content[x].ID == id){
+                contentIndex = x;
+            }
+        }
+
+
+        if(locs[i].type == 'park'){
+            parks.push({
+                lat: locs[i].lat,
+                lon: locs[i].lon,
+                title: content[contentIndex].title,
+                html: '<h4>' + content[contentIndex].title + '</h4><br /><p>' +content[contentIndex].description+ '</p>',
+                zoom: 8,
+                icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png'
+            })
+        }
+
+        if(locs[i].type == 'facility'){
+
+        }
+
+        if(locs[i].type == 'affiliate'){
+
+        }
     }
-];
 
-var _training_en = [
-    {
-        lat: 5.9,
-        lon: 10.9,
-        title: 'Title A1',
-        html: '<h3>Content A1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerA.png',
-    },
-    {
-        lat: 76.8,
-        lon: 1.7,
-        title: 'Title B1',
-        html: '<h3>Content B1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerB.png',
-    },
-    {
-        lat: 42.5,
-        lon: -1.1,
-        title: 'Title C1',
-        html: [
-            '<h3>Content C1</h3>',
-            '<p>Lorem Ipsum..</p>'
-        ].join(''),
-        zoom: 8,
-        icon: 'http://maps.google.com/mapfiles/markerC.png'
+    parks_training = parks.concat(training);
+    parks_affiliates = parks.concat(affiliates);
+    training_affiliates = training.concat(affiliates);
+    parks_training_affiliates = parks.concat(training).concat(affiliates);
+
+    locations = {"_parks" : parks,
+        "_training" : training,
+        "_affiliate": affiliates,
+        "_parks_training": parks_training,
+        "_parks_affiliate": parks_affiliates,
+        "_training_affiliate": training_affiliates,
+        "_parks_training_affiliate": parks_training_affiliates
+    };
+
+    if(window.location.pathname == "/CaliWorld/training_map.php"){
+        console.log('ready');
+        console.log(parks);
+        new Maplace({
+            show_markers: true,
+            locations: parks,
+            controls_on_map: false,zoom: 1
+        }).Load();
     }
-];
 
-var _affiliates_en = [
-    {
-        lat: 5.9,
-        lon: 10.9,
-        title: 'Title A1',
-        html: '<h3>Content A1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerA.png',
-    },
-    {
-        lat: 76.8,
-        lon: 1.7,
-        title: 'Title B1',
-        html: '<h3>Content B1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerB.png',
-    },
-    {
-        lat: 42.5,
-        lon: -1.1,
-        title: 'Title C1',
-        html: [
-            '<h3>Content C1</h3>',
-            '<p>Lorem Ipsum..</p>'
-        ].join(''),
-        zoom: 8,
-        icon: 'http://maps.google.com/mapfiles/markerC.png'
-    }
-];
-
-var _parks_cmn = [
-    {
-        lat: 5.9,
-        lon: 10.9,
-        title: 'Title A1',
-        html: '<h3>Content A1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerA.png',
-    },
-    {
-        lat: 76.8,
-        lon: 1.7,
-        title: 'Title B1',
-        html: '<h3>Content B1</h3>',
-        icon: 'http://maps.google.com/mapfiles/markerB.png',
-    },
-    {
-        lat: 42.5,
-        lon: -1.1,
-        title: 'Title C1',
-        html: [
-            '<h3>Content C1</h3>',
-            '<p>Lorem Ipsum..</p>'
-        ].join(''),
-        zoom: 8,
-        icon: 'http://maps.google.com/mapfiles/markerC.png'
-    }
-];
-
-
-var locations = {"_parks_en" : _parks_en, "_training_en" : _training_en, "_affiliates_en": _affiliates_en };
+}
 
 
 

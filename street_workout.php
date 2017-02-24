@@ -61,6 +61,9 @@ $pageTemp = 'tempStreetWorkout';
 
 //Include page queries
 
+//include location Queries
+include("Queries/locationQuiries.php");
+
 
 
 // Initiate the LAYOUT template view  - this will include the PAGE layout view

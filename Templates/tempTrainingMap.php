@@ -42,12 +42,4 @@
 <script src="js/locations.js"></script>
 <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyDh6moMbUVUvoe2BZ3DMOCF2xjJ7OPG4Pc&language=<?php echo $lang ?>"></script>
 <script src="Maplace/maplace.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        new Maplace({
-            show_markers: true,
-            locations: _parks_<?php echo $lang ?>,
-            controls_on_map: false
-        }).Load();
-    });
-</script>
+
