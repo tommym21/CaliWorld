@@ -53,16 +53,31 @@ function locationConstruct(data){
                 title: content[contentIndex].title,
                 html: '<h4>' + content[contentIndex].title + '</h4><br /><p>' +content[contentIndex].description+ '</p>',
                 zoom: 8,
-                icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png'
-            })
+                icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_green.png'
+            });
         }
 
-        if(locs[i].type == 'facility'){
+        if(locs[i].type == 'training'){
+            training.push({
+                lat: locs[i].lat,
+                lon: locs[i].lon,
+                title: content[contentIndex].title,
+                html: '<h4>' + content[contentIndex].title + '</h4><br /><p>' +content[contentIndex].description+ '</p>',
+                zoom: 8,
+                icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_purple.png'
+            });
 
         }
 
         if(locs[i].type == 'affiliate'){
-
+            affiliates.push({
+                lat: locs[i].lat,
+                lon: locs[i].lon,
+                title: content[contentIndex].title,
+                html: '<h4>' + content[contentIndex].title + '</h4><br /><p>' +content[contentIndex].description+ '</p>',
+                zoom: 8,
+                icon: 'http://maps.gstatic.com/mapfiles/ridefinder-images/mm_20_black.png'
+            });
         }
     }
 

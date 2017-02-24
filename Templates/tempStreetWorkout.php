@@ -13,7 +13,7 @@
 
 <!--    ======== Sly (slider) ============-->
 
-    <div class="scrollWrap">
+    <div  class="scrollWrap">
 
         <div class="scrollbar">
             <div class="handle">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="frame" id="basic">
-            <ul class="clearfix">
+            <ul class="clearfix" id="featured">
                 <li>
                     <h4>Summary</h4>
                     <h4>Image</h4>
@@ -228,3 +228,5 @@
 
 
 </div>
+
+<script src="js/locations.js"></script>
