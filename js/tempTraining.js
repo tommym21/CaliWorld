@@ -1,3 +1,7 @@
+var pageData;
+
+var sets = '';
+
 
 function contentToggle(id) {
     var string = 'output' + id;
@@ -29,9 +33,7 @@ function contentToggle(id) {
 
 }
 
-var pageData;
 
-var sets = '';
 
 $(function ()
 {
@@ -63,6 +65,18 @@ $(function ()
             }
         }
     });
+
+
+
+    //Load the correct tab based on locally stored variable
+    var tab = localStorage.getItem('trainingTab');
+
+    if(tab != null){
+        tabSwitch(tab);
+        contentToggle(tab);
+    }
+
+
 });
 
 //Array to store exersize JSON
@@ -293,7 +307,16 @@ function jsonRoutine (name, sets, lang) {
     var JSON = '{ "Name" : "' +name+ '", "Sets" : "' +sets+ '", "Routine" : [';
 
     for(var i=1;i<(exCount+1);i++){
-        JSON += '{ "Exercise" : "' +$('#title' + i).html()+ '" , "Sets" : "' +$('#exercise' + i).val()+ '"}';
+        var ID;
+
+        for(var x = 0;x < exercises.length;x++){
+            if(exercises[x].title == $('#title' + i).html()){
+                ID = exercises[x].id;
+            }
+        }
+
+
+        JSON += '{"exID" : "' + ID + '", "Exercise" : "' +$('#title' + i).html()+ '" , "Sets" : "' +$('#exercise' + i).val()+ '"}';
         if(i != exCount){
             JSON += ', ';
         }
@@ -468,11 +491,13 @@ function loadRoutine() {
 // FUNCTION TO POPULATE THE ROUTINE INTERFACE WITH A ROUTINE BASED OF JSON format
 function popRoutine(json){
 
+    console.log(pageData);
     var setContent = pageData['sets'][0].content;
     console.log(json);
     var routine = JSON.parse(json);
     console.log(routine);
     var html = '';
+    var sets;
 
     var exCount = 1;
 
@@ -480,7 +505,19 @@ function popRoutine(json){
     document.getElementById('cycles').innerHTML = routine.Sets;
 
     for(var i=0;i<routine.Routine.length;i++){
-        html += '<div class="exItem" ><div style="display: inline-block;"><h4 id="title' +exCount+ '">' + routine.Routine[i].Exercise + '</h4><h5 >'+setContent+': </h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="' + routine.Routine[i].Sets + '" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div style="float:right;font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>'
+        var name;
+
+        for(var x = 0;x < exercises.length;x++){
+            if(exercises[x].id == routine.Routine[i].exID){
+                name = exercises[x].title;
+                sets = routine.Routine[i].Sets;
+            }
+        }
+
+
+
+
+        html += '<div class="exItem" ><div style="display: inline-block;"><h4 id="title' +exCount+ '">' + name + '</h4><h5 >'+setContent+': ' +sets+ '</h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="' + routine.Routine[i].Sets + '" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div style="float:right;font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>'
         exCount += 1;
     }
 
@@ -554,13 +591,6 @@ function nameChange() {
 
 $( document ).ready(function() {
 
-    //Load the correct tab based on locally stored variable
-    var tab = localStorage.getItem('trainingTab');
-
-    if(tab != null){
-        tabSwitch(tab);
-        contentToggle(tab);
-    }
 
 
 
