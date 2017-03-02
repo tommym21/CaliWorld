@@ -1,14 +1,19 @@
 <div class="container firstContainer">
 
-    <p>
-        <h4>Street Workout </h4>is ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus metus id porta mollis. Sed viverra eleifend euismod. Suspendisse eget elit nunc. Ut vitae velit vitae tortor eleifend accumsan imperdiet malesuada ipsum. Nunc laoreet metus enim, eget facilisis odio interdum nec. Donec nec faucibus odio. Nunc accumsan facilisis magna vitae vestibulum. Maecenas sed euismod ipsum, vitae varius sem. Duis varius aliquam nibh et bibendum. Vestibulum ut congue odio, eget scelerisque lacus. Vivamus et tempus dui. Suspendisse at viverra justo, suscipit lobortis dui.
-    </p>
+    <header class="major">
+        <h2>Street Workout</h2>
+        <p>Ipsum dolor tempus commodo turpis adipiscing adipiscing in tempor placerat<br>
+            sed amet accumsan enim lorem sem turpis ut. Massa amet erat accumsan curae<br>
+            blandit porttitor faucibus in nisl nisi volutpat massa mi non nascetur.</p>
+    </header>
 
 </div>
 
 <div class="container">
 
-    <h4>Featured Facilities</h4>
+    <header class="major">
+        <h2>Featured Facilities</h2>
+    </header>
 
 
 <!--    ======== Sly (slider) ============-->
@@ -107,6 +112,10 @@
 
 
 <div class="container">
+
+    <header class="major">
+        <h2>Keep-up-to-Date</h2>
+    </header>
 
     <div class="row">
         <div class="6u 12u(2)">

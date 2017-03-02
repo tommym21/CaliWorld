@@ -1,24 +1,29 @@
-<!-- Banner -->
-<div class="container bannerWrap">
-    <section id="banner">
-        <div class="inner wrap">
-            <h2>Calisthenics News</h2>
-            <p>This website is dedicated to.. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed efficitur nisl. Sed at turpis nec mi euismod lobortis. Mauris egestas orci mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis, nulla sed consectetur tempus, nisl eros rhoncus ex, ut cursus turpis leo vel nibh. Morbi quis quam tellus. Phasellus vulputate felis ac faucibus placerat. Morbi posuere diam non eros ultrices vulputate pharetra vel odio. Pellentesque rhoncus gravida sapien eu semper. </p>
-            <ul class="actions">
-                <li><a href="#one" class="button big scrolly">Learn More</a></li>
-            </ul>
-        </div>
-    </section>
-</div>
-<!--Banner End-->
 
 
-<div class="container">
+<div class="container firstContainer">
 
-    <?php
-    echo 'Lang: ' . $lang .'<br />';
-    echo 'Region: ' . $region
-    ?>
+
+    <!--    ========= Start News Item ============-->
+        <blockquote>
+            <h4>Title</h4>
+            <p>
+                Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
+            </p>
+            <div class="share">
+                <ul class="icons">
+                    <li>
+                        <i class="icon fa-share-square-o" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+
+
+        </blockquote>
+
+    <!--    ========   End News Item   ===========-->
+
+
+
 
 </div>
 

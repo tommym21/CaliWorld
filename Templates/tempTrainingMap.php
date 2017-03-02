@@ -1,4 +1,11 @@
 <div class="container firstContainer">
+
+    <header class="major">
+        <p>Ipsum dolor tempus commodo turpis adipiscing adipiscing in tempor placerat<br>
+            sed amet accumsan enim lorem sem turpis ut. Massa amet erat accumsan curae<br>
+            blandit porttitor faucibus in nisl nisi volutpat massa mi non nascetur.</p>
+    </header>
+
     <div class="row">
         <h4><?php  $mainName = contentSearch($trainingMapContent, 'ID', 1); echo $mainName[0]['content'] ?></h4>
 

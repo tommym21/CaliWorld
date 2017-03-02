@@ -2,15 +2,41 @@
 
 
 <div class="container firstContainer">
+    <div class="row 150%">
+        <div class="4u 12u$(2)">
 
-    <p>
-        The exercises arose in the early 19th century from the work of Germans Friedrich Ludwig Jahn and Adolf Spiess in popularizing gymnastics and were especially stressed by Per Henrik Ling of Sweden as important in the development of education for women. In the United States, Catherine Beecher was an early advocate of calisthenics and wrote Physiology and Calisthenics for Schools and Families (1857). As promoted by Beecher, calisthenics were intended solely for women, but they quickly became an activity for both sexes.
-    </p>
+            <!-- Sidebar -->
+            <section id="sidebar">
+                <section>
+                    <h4>--Region-- History</h4>
+                    <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p><br /><br />
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="#" class="button small alt">Learn More</a></li>
+                        </ul>
+                    </footer>
+                </section>
+                <hr>
+                <section>
+                    <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
 
-    <p>
-        The health benefits of calisthenics were generally recognized by the beginning of the 20th century, and primary and secondary schools throughout the Western world began instituting the exercises as a regular activity. Calisthenics are also a part of military training.
-    </p>
+                </section>
+            </section>
 
+        </div>
+        <div class="8u 12u$(2) important(2)">
+
+            <!-- Content -->
+            <section id="content">
+                <a href="#" class="image fit"><img src="images/slide02.jpg" alt=""></a>
+                <h4>Origin of Calisthenics</h4>
+                <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
+                <h3>Sed Magna Ornare</h3>
+
+            </section>
+
+        </div>
+    </div>
 </div>
 
 <div class="container">

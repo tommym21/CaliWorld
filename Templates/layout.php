@@ -39,11 +39,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($count === 1) {
             //Successful login
             $_SESSION['login_user'] = $myusername;
-            header("location: home.php");
+            header("Refresh:0");
 
         } else {
             //Failed login
-            $error =
+            $error = contentSearch($layoutContent, 'ID', 18)[0]['content'];
             $logShow = 'true';
         }
     }

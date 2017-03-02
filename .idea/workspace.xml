@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93eabacf-9eea-471b-8236-b19dfdf68d9d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tempTraining.js" afterPath="$PROJECT_DIR$/js/tempTraining.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/exersizes.php" afterPath="$PROJECT_DIR$/Templates/exersizes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/layout.php" afterPath="$PROJECT_DIR$/Templates/layout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/tempHistory.php" afterPath="$PROJECT_DIR$/Templates/tempHistory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/tempHome.php" afterPath="$PROJECT_DIR$/Templates/tempHome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/tempNews.php" afterPath="$PROJECT_DIR$/Templates/tempNews.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/tempStreetWorkout.php" afterPath="$PROJECT_DIR$/Templates/tempStreetWorkout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Templates/tempTrainingMap.php" afterPath="$PROJECT_DIR$/Templates/tempTrainingMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/global.css" afterPath="$PROJECT_DIR$/css/global.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,100 +26,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tempStreetWorkout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Templates/tempStreetWorkout.php">
+      <file leaf-file-name="tempNews.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Templates/tempNews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="639">
+              <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trainingContentQueries.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Queries/trainingContentQueries.php">
+      <file leaf-file-name="global.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-              <folding>
-                <marker date="1487321796000" expanded="true" signature="558:626" ph="SELECT * FRO... Exersize" />
-              </folding>
+            <state relative-caret-position="243">
+              <caret line="362" column="18" lean-forward="false" selection-start-line="362" selection-start-column="18" selection-end-line="362" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trainingQueries.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Queries/trainingQueries.php">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1635">
-              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="26" />
-              <folding>
-                <marker date="1487884969000" expanded="true" signature="645:715" ph="SELECT * FRO... Exersize" />
-                <marker date="1487884969000" expanded="true" signature="1037:1141" ph="SELECT * FRO... TrainingContent" />
-                <marker date="1487884969000" expanded="true" signature="1480:1545" ph="SELECT * FRO... Routine" />
-                <marker date="1487884969000" expanded="true" signature="1883:1930" ph="SELECT * FRO... TrainingContent" />
-                <marker date="1487884969000" expanded="true" signature="1883:1951" ph="SELECT * FRO... TrainingContent" />
-                <marker date="1487884969000" expanded="true" signature="1883:1974" ph="SELECT * FRO... TrainingContent" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tempTraining.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/tempTraining.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="519" column="150" lean-forward="false" selection-start-line="519" selection-start-column="150" selection-end-line="519" selection-end-column="150" />
-              <folding>
-                <marker date="1488484928000" expanded="true" signature="3297:3306" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="3489:3500" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="3766:3781" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="3985:3994" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7143:7165" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7248:7263" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7339:7361" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7487:7540" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7627:7649" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7758:7785" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7852:7868" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7963:7974" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="7963:7990" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="8113:8129" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="8200:8212" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="12919:12940" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="14746:14768" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="14863:14878" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="14954:14976" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15102:15155" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15272:15294" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15403:15430" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15497:15513" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15608:15635" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15758:15774" ph="..." />
-                <marker date="1488484928000" expanded="true" signature="15845:15857" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tempLayout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/tempLayout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-              <folding>
-                <marker date="1486468390000" expanded="true" signature="1170:1187" ph="..." />
-                <marker date="1486468390000" expanded="true" signature="1255:1269" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tempStreetWorkout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/tempStreetWorkout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+            <state relative-caret-position="204">
+              <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -120,28 +59,31 @@
       <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Templates/layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6930">
-              <caret line="462" column="0" lean-forward="false" selection-start-line="462" selection-start-column="0" selection-end-line="462" selection-end-column="0" />
+            <state relative-caret-position="-5505">
+              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding>
-                <marker date="1487953812000" expanded="true" signature="797:894" ph="SELECT * FRO... User" />
-                <marker date="1487953812000" expanded="true" signature="1480:1541" ph="SELECT * FRO... User" />
-                <marker date="1487953812000" expanded="true" signature="1899:1975" ph="INSERT INTO `User`... " />
-                <marker date="1487953812000" expanded="true" signature="1899:1996" ph="INSERT INTO `User`... " />
-                <marker date="1487953812000" expanded="true" signature="1899:1997" ph="INSERT INTO `User`... " />
+                <marker date="1488491275000" expanded="true" signature="797:894" ph="SELECT * FRO... User" />
+                <marker date="1488491275000" expanded="true" signature="1526:1587" ph="SELECT * FRO... User" />
+                <marker date="1488491275000" expanded="true" signature="1945:2021" ph="INSERT INTO `User`... " />
+                <marker date="1488491275000" expanded="true" signature="1945:2042" ph="INSERT INTO `User`... " />
+                <marker date="1488491275000" expanded="true" signature="1945:2043" ph="INSERT INTO `User`... " />
+                <marker date="1488491275000" expanded="true" signature="11355:11361" ph=" " />
+                <marker date="1488491275000" expanded="true" signature="11361:11367" ph=" " />
+                <marker date="1488491275000" expanded="true" signature="12996:13013" ph="..." />
+                <marker date="1488491275000" expanded="true" signature="13029:13043" ph="..." />
+                <marker date="1488491275000" expanded="true" signature="15203:15329" ph="..." />
+                <marker date="1488491275000" expanded="true" signature="15234:15304" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="streetWorkoutQueries.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Queries/streetWorkoutQueries.php">
+      <file leaf-file-name="logout.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <marker date="1487953121000" expanded="true" signature="563:731" ph="SELECT * FRO... LocationContent" />
-                <marker date="1487953121000" expanded="true" signature="563:754" ph="SELECT * FRO... LocationContent" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -159,10 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>menu</find>
-      <find>define</find>
-      <find>require</find>
-      <find>cycleModal</find>
       <find>exItem</find>
       <find>errorbar</find>
       <find>active</find>
@@ -189,6 +127,10 @@
       <find>soryy</find>
       <find>getIte</find>
       <find>pop</find>
+      <find>popRoutine</find>
+      <find>blockquote</find>
+      <find>17</find>
+      <find>1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,11 +139,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/require.js" />
         <option value="$PROJECT_DIR$/package/src/GraphemeBreaker.js" />
         <option value="$PROJECT_DIR$/Queries/loginPage.php" />
         <option value="$PROJECT_DIR$/css/fonts.css" />
-        <option value="$PROJECT_DIR$/Templates/tempHistory.php" />
         <option value="$PROJECT_DIR$/css/mediaQueries.css" />
         <option value="$PROJECT_DIR$/history.php" />
         <option value="$PROJECT_DIR$/Queries/selectQuery.php" />
@@ -210,25 +150,20 @@
         <option value="$PROJECT_DIR$/Media/tweet_cmn.php" />
         <option value="$PROJECT_DIR$/Queries/login.php" />
         <option value="$PROJECT_DIR$/session.php" />
-        <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/loginPage.php" />
         <option value="$PROJECT_DIR$/Templates/success.html" />
         <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/js/tempHome.js" />
         <option value="$PROJECT_DIR$/Queries/homeQueries.php" />
         <option value="$PROJECT_DIR$/Queries/homeContentQueries.php" />
-        <option value="$PROJECT_DIR$/Templates/tempHome.php" />
         <option value="$PROJECT_DIR$/training.php" />
         <option value="$PROJECT_DIR$/Templates/tempTraining.php" />
         <option value="$PROJECT_DIR$/Queries/trainingContentQueries.php" />
-        <option value="$PROJECT_DIR$/Templates/exersizes.php" />
         <option value="$PROJECT_DIR$/Queries/saveRoutine.php" />
-        <option value="$PROJECT_DIR$/css/global.css" />
         <option value="$PROJECT_DIR$/Classes/IP_region.php" />
         <option value="$PROJECT_DIR$/nyroModal-master/styles/nyroModal.css" />
         <option value="$PROJECT_DIR$/js/global.js" />
         <option value="$PROJECT_DIR$/Maplace/maplace.min.js" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/locations" />
         <option value="$PROJECT_DIR$/js/tempTrainingMapTest.js" />
         <option value="$PROJECT_DIR$/Templates/tempTrainingMapTest.php" />
@@ -240,14 +175,21 @@
         <option value="$PROJECT_DIR$/street_workout.php" />
         <option value="$PROJECT_DIR$/training_map.php" />
         <option value="$PROJECT_DIR$/Queries/locationQueries.php" />
-        <option value="$PROJECT_DIR$/Templates/tempTrainingMap.php" />
         <option value="$PROJECT_DIR$/js/tempTrainingMap.js" />
         <option value="$PROJECT_DIR$/js/locations.js" />
         <option value="$PROJECT_DIR$/Queries/streetWorkoutQueries.php" />
-        <option value="$PROJECT_DIR$/Templates/layout.php" />
-        <option value="$PROJECT_DIR$/Templates/tempStreetWorkout.php" />
         <option value="$PROJECT_DIR$/js/tempStreetWorkout.js" />
         <option value="$PROJECT_DIR$/js/tempTraining.js" />
+        <option value="$PROJECT_DIR$/Templates/tempHome.php" />
+        <option value="$PROJECT_DIR$/Templates/exersizes.php" />
+        <option value="$PROJECT_DIR$/Templates/tempHistory.php" />
+        <option value="$PROJECT_DIR$/Templates/tempTrainingMap.php" />
+        <option value="$PROJECT_DIR$/Templates/tempStreetWorkout.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/Templates/tempNews.php" />
+        <option value="$PROJECT_DIR$/css/global.css" />
+        <option value="$PROJECT_DIR$/Templates/layout.php" />
+        <option value="$PROJECT_DIR$/logout.php" />
       </list>
     </option>
   </component>
@@ -571,12 +513,12 @@
       <workItem from="1487878891454" duration="5404000" />
       <workItem from="1487928755473" duration="14092000" />
       <workItem from="1488471451403" duration="1861000" />
-      <workItem from="1488483811053" duration="973000" />
+      <workItem from="1488483811053" duration="4875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253926000" />
+    <option name="totallyTimeSpent" value="257828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -635,20 +577,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/global.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Classes/template.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Queries/selectQuery.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -684,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/history.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -712,18 +633,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/tempHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -756,6 +670,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -775,14 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
           <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5910">
-          <caret line="394" column="21" lean-forward="true" selection-start-line="394" selection-start-column="21" selection-end-line="394" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,13 +714,6 @@
         <state relative-caret-position="1035">
           <caret line="69" column="5" lean-forward="false" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="1296" column="22" lean-forward="false" selection-start-line="1296" selection-start-column="22" selection-end-line="1296" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -844,14 +744,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Templates/tempTrainingMapTest.php" />
-    <entry file="file://$PROJECT_DIR$/Templates/exersizes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="128" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Queries/layoutTemplate_queries.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
@@ -894,6 +786,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -901,14 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/tempTraining.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/tempTrainingMap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Queries/locationQueries.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -953,58 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tempLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding>
-            <marker date="1486468390000" expanded="true" signature="1170:1187" ph="..." />
-            <marker date="1486468390000" expanded="true" signature="1255:1269" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tempStreetWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6930">
-          <caret line="462" column="0" lean-forward="false" selection-start-line="462" selection-start-column="0" selection-end-line="462" selection-end-column="0" />
-          <folding>
-            <marker date="1487953812000" expanded="true" signature="797:894" ph="SELECT * FRO... User" />
-            <marker date="1487953812000" expanded="true" signature="1480:1541" ph="SELECT * FRO... User" />
-            <marker date="1487953812000" expanded="true" signature="1899:1975" ph="INSERT INTO `User`... " />
-            <marker date="1487953812000" expanded="true" signature="1899:1996" ph="INSERT INTO `User`... " />
-            <marker date="1487953812000" expanded="true" signature="1899:1997" ph="INSERT INTO `User`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Queries/streetWorkoutQueries.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1487953121000" expanded="true" signature="563:731" ph="SELECT * FRO... LocationContent" />
-            <marker date="1487953121000" expanded="true" signature="563:754" ph="SELECT * FRO... LocationContent" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/tempStreetWorkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1065,6 +890,136 @@
             <marker date="1488484928000" expanded="true" signature="15758:15774" ph="..." />
             <marker date="1488484928000" expanded="true" signature="15845:15857" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tempLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding>
+            <marker date="1486468390000" expanded="true" signature="1170:1187" ph="..." />
+            <marker date="1486468390000" expanded="true" signature="1255:1269" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tempStreetWorkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="29" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Queries/streetWorkoutQueries.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1487953121000" expanded="true" signature="563:731" ph="SELECT * FRO... LocationContent" />
+            <marker date="1487953121000" expanded="true" signature="563:754" ph="SELECT * FRO... LocationContent" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tempStreetWorkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="116" column="32" lean-forward="false" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tempHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tempHistory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="268" lean-forward="false" selection-start-line="11" selection-start-column="268" selection-end-line="11" selection-end-column="268" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/exersizes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tempTrainingMap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tempTraining.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="3" lean-forward="false" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="362" column="18" lean-forward="false" selection-start-line="362" selection-start-column="18" selection-end-line="362" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/tempNews.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5505">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <marker date="1488491275000" expanded="true" signature="797:894" ph="SELECT * FRO... User" />
+            <marker date="1488491275000" expanded="true" signature="1526:1587" ph="SELECT * FRO... User" />
+            <marker date="1488491275000" expanded="true" signature="1945:2021" ph="INSERT INTO `User`... " />
+            <marker date="1488491275000" expanded="true" signature="1945:2042" ph="INSERT INTO `User`... " />
+            <marker date="1488491275000" expanded="true" signature="1945:2043" ph="INSERT INTO `User`... " />
+            <marker date="1488491275000" expanded="true" signature="11355:11361" ph=" " />
+            <marker date="1488491275000" expanded="true" signature="11361:11367" ph=" " />
+            <marker date="1488491275000" expanded="true" signature="12996:13013" ph="..." />
+            <marker date="1488491275000" expanded="true" signature="13029:13043" ph="..." />
+            <marker date="1488491275000" expanded="true" signature="15203:15329" ph="..." />
+            <marker date="1488491275000" expanded="true" signature="15234:15304" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

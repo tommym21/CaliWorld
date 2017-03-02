@@ -358,6 +358,16 @@ form {
     float: right;
 }
 
+blockquote p {
+    display: inline-block;
+    max-width: 90%;
+}
+
+.share {
+    float: right;
+    display: inline-block;
+}
+
 .exItem {
     background-color: #f2f2f2;
     border: 1px solid #333333;

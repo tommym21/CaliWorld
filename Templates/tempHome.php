@@ -16,25 +16,12 @@
 
 <a href="#one" name="one" id="one"></a>
 
-<div class="container firstContainer">
 
-    <?php
-    echo 'Lang: ' . $lang .'<br />';
-    echo 'Region: ' . $region
-    ?>
 
-    <p>
-        Calisthenics and Calisthenics World promote strength, endurance, flexibility, and coordination and augment the body’s general well-being by placing controllable, regular demands upon the cardiovascular system. The exercises can function as physique builders or serve as warm-ups for more-strenuous sports or exertions.
-    </p>
 
-    <p>
-        Related disciplies.....
-    </p>
-
-</div>
 
 <section id="three" >
-    <div class="container">
+    <div class="container firstContainer">
         <header class="major">
             <h2><?php  $content = contentSearch($homeContent, 'id', '1'); echo $content[0]['content'] ?><h2>
         </header>
