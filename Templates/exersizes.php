@@ -10,10 +10,8 @@
 <!--==================-->
 
 <header class="major">
-    <h2>Lorem ipsum dolor</h2>
-    <p>Ipsum dolor tempus commodo turpis adipiscing adipiscing in tempor placerat<br>
-        sed amet accumsan enim lorem sem turpis ut. Massa amet erat accumsan curae<br>
-        blandit porttitor faucibus in nisl nisi volutpat massa mi non nascetur.</p>
+    <h2><?php  $mainName = contentSearch($trainingContent, 'ID', 27); echo $mainName[0]['content'] ?></h2>
+    <p><?php  $mainName = contentSearch($trainingContent, 'ID', 26); echo $mainName[0]['content'] ?></p>
 </header>
 
 

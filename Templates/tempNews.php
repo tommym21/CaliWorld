@@ -1,6 +1,6 @@
 
 
-<div class="container firstContainer">
+<div id="newsWrap" class="container firstContainer">
 
 
     <!--    ========= Start News Item ============-->

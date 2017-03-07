@@ -1,10 +1,8 @@
 <div class="container firstContainer">
 
     <header class="major">
-        <h2>Street Workout</h2>
-        <p>Ipsum dolor tempus commodo turpis adipiscing adipiscing in tempor placerat<br>
-            sed amet accumsan enim lorem sem turpis ut. Massa amet erat accumsan curae<br>
-            blandit porttitor faucibus in nisl nisi volutpat massa mi non nascetur.</p>
+        <h2><?php  $mainName = contentSearch($streetWorkoutContent, 'id', 2); echo $mainName[0]['content'] ?></h2>
+        <p><?php  $mainName = contentSearch($streetWorkoutContent, 'id', 1); echo $mainName[0]['content'] ?></p>
     </header>
 
 </div>

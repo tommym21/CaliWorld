@@ -338,6 +338,15 @@ li {
 
 }
 
+#password, #newpassword {
+    color: transparent;
+    background: transparent;
+}
+
+.maskField {
+    margin-right:-259px !important;
+}
+
 form {
     width:100%;
 }

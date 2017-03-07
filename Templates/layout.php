@@ -317,8 +317,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for='username'><?php  $mainName = contentSearch($layoutContent, 'ID', 8); echo $mainName[0]['content'] ?>:</label>
                     <input type='text' name='username' id='username' maxlength="50"/>
                     <label for='password'><?php  $mainName = contentSearch($layoutContent, 'ID', 9); echo $mainName[0]['content'] ?>:</label>
-                    <input type='password' name='password' id='password' maxlength="50"/>
+                    <input type="password" id="in-betweenLog" class="maskField" disabled/>
+                    <input type='password' name='password' id='password' maxlength="50" onkeyup="maskChange('in-betweenLog', this)" />
+
                     <input class="button" type='submit' name='Submit' value='<?php  $mainName = contentSearch($layoutContent, 'ID', 6); echo $mainName[0]['content'] ?>'/>
+
+
                 </fieldset>
             </form>
 
@@ -331,7 +335,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for='newusername'><?php  $mainName = contentSearch($layoutContent, 'ID', 8); echo $mainName[0]['content'] ?>:</label>
                     <input type='text' name='newusername' id='newusername' maxlength="50"/>
                     <label for='newpassword'><?php  $mainName = contentSearch($layoutContent, 'ID', 9); echo $mainName[0]['content'] ?>:</label>
-                    <input type='password' name='newpassword' id='newpassword' maxlength="50"/>
+                    <input type="password" id="in-betweenReg" class="maskField" disabled/>
+                    <input type='password' name='newpassword' id='newpassword' maxlength="50" onkeyup="maskChange('in-betweenReg', this)" />
+
                     <input class="button special" type='submit' name='Register' value='<?php  $mainName = contentSearch($layoutContent, 'ID', 7); echo $mainName[0]['content'] ?>'/>
                 </fieldset>
             </form>

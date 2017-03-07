@@ -3,7 +3,7 @@
 session_start();
 
 if(session_destroy()) {
-    header("Refresh:0");
+    header("location:home.php");
 }
 
 ?>

@@ -8,41 +8,38 @@ if(!(function_exists('db_connect'))){
     include('../database.php');
 }
 
-$featuredFacilities = array();
+
+$newsContent = array();
 
 
 
 //--------------------------------------------------------------------------
 // 2) Query database for data
 //--------------------------------------------------------------------------
+//gets all media items from the database in the required language
+$newsContentQuery = "SELECT * FROM `News` WHERE `lang_sub_tag` ='" . $_POST['lang'] . "'";
+$newsResult = db_query($newsContentQuery);
 
-$facilitiesQuery = "SELECT * FROM `LocationContent` JOIN `Locations` ON `LocationContent`.`ID` = `Locations`.`ID` WHERE `Locations`.`featured`='true' AND `LocationContent`.`lang_sub_tag`='" . $_POST['lang'] . "'";
-$facilitiesResult = db_query($facilitiesQuery);
-
-if($facilitiesResult === false) {
+if($newsResult === false) {
     $error = db_error();
     // Handle error - inform administrator, log to file, show error page, etc.
 }
 else {
-    while($row = $facilitiesResult->fetch_assoc()) {
+    while($row = $newsResult->fetch_assoc()) {
 
-        array_push($featuredFacilities, $row);
+        array_push($newsContent, $row);
     }
 
 
 }
 
 
-
-
 //--------------------------------------------------------------------------
 // 3) echo result as json
 //--------------------------------------------------------------------------
 
-
-if(isset($featuredFacilities)){
-    $return['featuredFacilities'] = $featuredFacilities;
+if(isset($newsContent)){
+    $return['news'] = $newsContent;
 }
-
 
 echo json_encode($return);

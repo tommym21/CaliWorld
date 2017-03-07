@@ -3,10 +3,10 @@
     <section id="banner">
         <div class="inner wrap">
             <p>
-                <?php  $banner = contentSearch($layoutContent, 'ID', 4); echo $banner[0]['content'] ?>
+                <?php  $content = contentSearch($homeContent, 'id', '5'); echo $content[0]['content'] ?>
             </p>
             <ul class="actions">
-                <li><a href="#one" class="button big scrolly"> <?php  $learn = contentSearch($layoutContent, 'ID', 5); echo $learn[0]['content'] ?></a></li>
+                <li><a href="#one" class="button big scrolly"> <?php  $learn = contentSearch($homeContent, 'id', '6'); echo $learn[0]['content'] ?></a></li>
             </ul>
         </div>
     </section>

@@ -8,17 +8,12 @@
             <!-- Sidebar -->
             <section id="sidebar">
                 <section>
-                    <h4>--Region-- History</h4>
-                    <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit..</p><br /><br />
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="#" class="button small alt">Learn More</a></li>
-                        </ul>
-                    </footer>
+                    <h4><?php  $content = contentSearch($historyRegContent, 'id', '3'); echo $content[0]['content'] ?></h4>
+                    <p><?php  $content = contentSearch($historyRegContent, 'id', '1'); echo $content[0]['content'] ?></p>
                 </section>
                 <hr>
                 <section>
-                    <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+                    <a class="image"><img src="Images/<?php  $content = contentSearch($historyRegContent, 'id', '2'); echo $content[0]['content'] ?>" alt=""></a>
 
                 </section>
             </section>
@@ -28,11 +23,9 @@
 
             <!-- Content -->
             <section id="content">
-                <a href="#" class="image fit"><img src="images/slide02.jpg" alt=""></a>
-                <h4>Origin of Calisthenics</h4>
-                <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-                <h3>Sed Magna Ornare</h3>
-
+                <a href="#" class="image"><img src="Images/<?php  $content = contentSearch($historyContent, 'id', '3'); echo $content[0]['content'] ?>" alt=""></a>
+                <h4><?php  $content = contentSearch($historyContent, 'id', '1'); echo $content[0]['content'] ?></h4>
+                <p><?php  $content = contentSearch($historyContent, 'id', '2'); echo $content[0]['content'] ?></p>
             </section>
 
         </div>

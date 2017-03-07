@@ -60,9 +60,9 @@ foreach($regionContent as $row => $array) {
 $pageTemp = 'tempStreetWorkout';
 
 //Include page queries
+include("Queries/swContentQueries.php");
 
 //include location Queries
-include("Queries/locationQuiries.php");
 
 
 

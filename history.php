@@ -54,7 +54,7 @@ foreach($regionContent as $row => $array) {
 $pageTemp = 'tempHistory';
 
 //Include page queries
-
+include("Queries/historyContentQueries.php");
 
 
 // Initiate the LAYOUT template view  - this will include the PAGE layout view

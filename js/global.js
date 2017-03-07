@@ -165,3 +165,22 @@ function registerTog () {
 // =================================
 // END Layout template functions:
 // =================================
+
+
+
+function maskChange(ele, trigg){
+    var target = trigg;
+    var mask = document.getElementById(ele)
+    var string = target.value;
+
+    var counter = new GraphemeSplitter();
+    var passCount = counter.countGraphemes(string);
+
+    var stringMask='';
+    for(var i=0;i<passCount;i++){
+        stringMask += 'a';
+    }
+
+    mask.value = stringMask;
+
+}
