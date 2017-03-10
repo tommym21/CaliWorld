@@ -262,6 +262,7 @@ li {
 
 .mediaImage img {
     width:100%;
+    max-height: 75px;
 }
 
 .mediaContent {
@@ -420,3 +421,20 @@ blockquote p {
 
 }
 
+.newsLeft {
+    width: 33.3333333333%;
+    clear: none;
+    float: left;
+}
+
+.newsRight {
+    width: 66.6666666667%;
+    clear: none;
+    float: left;
+    padding-left: 20px;
+}
+
+.newsImg {
+    width: 100%;
+    padding-right: 20px;
+}

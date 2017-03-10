@@ -9,6 +9,7 @@ if(!(function_exists('db_connect'))){
 }
 
 $featuredFacilities = array();
+$competitions = array();
 
 
 
@@ -33,6 +34,25 @@ else {
 }
 
 
+$compQuery = "SELECT * FROM `Calendar` WHERE `Type`='Competition'";
+$compResult = db_query($compQuery);
+
+if($compResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $compResult->fetch_assoc()) {
+
+        array_push($competitions, $row);
+    }
+
+
+}
+
+
+
+
 
 
 //--------------------------------------------------------------------------
@@ -44,5 +64,8 @@ if(isset($featuredFacilities)){
     $return['featuredFacilities'] = $featuredFacilities;
 }
 
+if(isset($competitions)){
+    $return['competitions'] = $competitions;
+}
 
 echo json_encode($return);

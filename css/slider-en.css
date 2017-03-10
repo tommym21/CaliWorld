@@ -10,7 +10,7 @@
 /* Frame */
 
 .frame {
-    height: 250px;
+    height: 520px;
     line-height: 250px;
     overflow: hidden;
 }
@@ -25,7 +25,7 @@
 
 .frame ul li {
     float: left;
-    width: 227px;
+    width: 340px;
     height: 100%;
     margin: 0 15px 0 0;
     padding: 20px;
@@ -36,7 +36,7 @@
 }
 
 .frame ul li.active {
-    color: #fff;
+    color: #000;
     border: solid 2px #3d4045 !important;
     background-color: #f2f2f2 !important;
 }

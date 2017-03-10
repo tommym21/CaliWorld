@@ -464,7 +464,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 if($pageTemp == "tempStreetWorkout") {
 //        echo '<link rel="stylesheet" type="text/css" href="http://darsa.in/sly/css/ospb.css" />';
     echo '<link rel="stylesheet" type="text/css" href="css/slider-' . $lang . '.css" />';
-//    echo '<script type="text/javascript" src="js/sly.js"></script>';
+   echo '<script type="text/javascript" src="js/sly.js"></script>';
 }
 
 if($pageTemp == "tempTraining") {

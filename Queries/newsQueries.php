@@ -17,7 +17,7 @@ $newsContent = array();
 // 2) Query database for data
 //--------------------------------------------------------------------------
 //gets all media items from the database in the required language
-$newsContentQuery = "SELECT * FROM `News` WHERE `lang_sub_tag` ='" . $_POST['lang'] . "'";
+$newsContentQuery = "SELECT * FROM `News` WHERE `lang_sub_tag` ='" . $_POST['lang'] . "' AND `reg_sub_tag`='" . $_POST['reg'] . "'";
 $newsResult = db_query($newsContentQuery);
 
 if($newsResult === false) {
