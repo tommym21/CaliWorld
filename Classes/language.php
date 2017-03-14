@@ -64,13 +64,15 @@ class language
         //Get the key value for the first element
         for ($i = 0; $i < count($this->values); $i++) {
 
-            $languageQuery = "SELECT `Lang_Sub_Tag` FROM `Legacy_Language_Tags` WHERE `Legacy` = '" . strtolower(key($this->values)) . "'";
+            $languageQuery = "SELECT `lang_sub_tag`, `dir` FROM `Legacy_Language_Tags` JOIN `Lang_Sub_Tag` ON `Lang_Sub_Tag`.Subtag = `Legacy_Language_Tags`.lang_sub_tag WHERE `Legacy_Language_Tags`.Legacy='" . strtolower(key($this->values)) . "'";
             $result = db_select($languageQuery);
 
             if (!($result === false)) {
                 if (array_key_exists(0, $result)) {
                     //Return the first supported language (tag)
-                    return $result[0]['Lang_Sub_Tag'];
+                    return $result[0];
+//                        $result[0]['lang_sub_tag'];
+                    //                        $result[0]['dir'];
                 }
 
             }
@@ -80,17 +82,21 @@ class language
         }
 
         //If no supported language is returned based on the user browser language preferences, lookup the default language for their region
-        $languageFallBackQuery = "SELECT `default_lang` FROM `Region` WHERE `Reg_Sub_Tag` = '" . strtolower($this->region) . "'";
+        $languageFallBackQuery = "SELECT `Subtag` AS 'lang_sub_tag',`dir`  FROM `Region` JOIN `Lang_Sub_Tag` ON `Lang_Sub_Tag`.Subtag = `Region`.`default_lang` WHERE `Region`.Reg_Sub_Tag = '" . strtolower($this->region) . "'";
         $fallbackResult = db_select($languageFallBackQuery);
         if (!($fallbackResult === false)) {
             if (array_key_exists(0, $fallbackResult)) {
-                return $fallbackResult[0]['default_lang'];
+                return $fallbackResult[0];
+//                $fallbackResult[0]['lang_sub_tag'];
+                //                        $result[0]['dir'];
             }
 
         }
 
         //If no default supported languages found for visitors region , fall back to en
-       return 'en';
+        $result[0]['lang_sub_tag'] = 'en';
+        $result[0]['dir'] = 'ltr';
+        return $result;
     }
 
 

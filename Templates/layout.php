@@ -88,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <!DOCTYPE html>
-<html dir="ltr">
+<html dir="<?php echo $dir ?>">
 
 
 
