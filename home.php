@@ -22,6 +22,7 @@ $region = $reqReg->get();
 $reqLang = new Language();
 $reqLang->set($_SERVER['HTTP_ACCEPT_LANGUAGE'], $region);
 $lang=$reqLang->get();
+$dir=$reqLang->getDir();
 
 $langName;
 $regName;

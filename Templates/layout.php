@@ -88,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <!DOCTYPE html>
-<html>
+<html dir="ltr">
 
 
 
@@ -132,6 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         var userLength = '<?php  $mainName = contentSearch($layoutContent, 'ID', 20); echo $mainName[0]['content'] ?>';
         var passLength = '<?php  $mainName = contentSearch($layoutContent, 'ID', 21); echo $mainName[0]['content'] ?>';
+
 
         $(document).ready(function () {
 

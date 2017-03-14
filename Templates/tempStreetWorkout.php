@@ -10,7 +10,7 @@
 <div class="container">
 
     <header class="major">
-        <h2>Featured Facilities</h2>
+        <h2><?php  $mainName = contentSearch($streetWorkoutContent, 'id', 18); echo $mainName[0]['content'] ?></h2>
     </header>
 
 

@@ -34,7 +34,7 @@ else {
 }
 
 
-$compQuery = "SELECT * FROM `Calendar` WHERE `Type`='Competition'";
+$compQuery = "SELECT * FROM `Calendar` WHERE `Type`='Competition' AND `lang_sub_tag`='" .$_POST['lang']. "'";
 $compResult = db_query($compQuery);
 
 if($compResult === false) {

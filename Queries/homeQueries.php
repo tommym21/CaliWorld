@@ -1,6 +1,6 @@
 <?php
 
-
+$strings = array();
 $mediaContent = array();
 $calendarContent = array();
 
@@ -54,6 +54,23 @@ else {
 
 }
 
+//gets all calendar items from the database in the required language
+$stringQuery = " SELECT * FROM `HomeContent` WHERE (`id`='7' OR `id`='8' ) AND `lang_sub_tag` ='" . $_POST['lang'] . "'";
+$stringResult = db_query($stringQuery);
+
+if($stringResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $stringResult->fetch_assoc()) {
+
+        array_push($strings, $row);
+    }
+
+
+}
+
 
 
 
@@ -63,6 +80,7 @@ else {
 //--------------------------------------------------------------------------
 $return['media'] = $mediaContent;
 $return['calendar'] = $calendarContent;
+$return['strings'] = $strings;
 echo json_encode($return);
 
 ?>
