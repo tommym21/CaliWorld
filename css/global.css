@@ -85,7 +85,6 @@ html {
 
 #userTog {
     display: block;
-    float: right;
     padding: 10px 15px 0 15px;
     height: 41px;
 }
@@ -94,7 +93,6 @@ html {
     display: inline-block;
     height: 30px;
     line-height: 30px;
-    float: right;
 }
 
 #login, #register {
@@ -105,9 +103,6 @@ html {
 
 }
 
-#login > fieldset {
-    float: right;
-}
 
 #userBar {
     max-width:1500px;
@@ -123,9 +118,7 @@ html {
     margin: 10px;
 }
 
-#register > fieldset {
-    float: right;
-}
+
 
 #register > fieldset > * {
     width: auto;
@@ -141,6 +134,7 @@ html {
     color: #e0555a;
     clear: both;
     padding-right: 13px;
+    padding-left: 13px;
     width:auto;
 }
 
@@ -248,16 +242,12 @@ li {
     color: #ffffff;
 }
 
-.float {
-    display: block;
-    position: relative;
-    clear: none;
-    float: left;
-}
-
 .mediaImage {
     width:100px;
     margin:0 auto;
+    display: block;
+    position: relative;
+    clear: none;
 }
 
 .mediaImage img {
@@ -281,7 +271,7 @@ li {
 .mediaTitle {
     max-width:110px;
     margin:0 auto;
-    padding:15px 10px 0 10px;
+    padding: 15px 0px 0 0px;
 }
 
 .mainMenu li {
@@ -334,7 +324,6 @@ li {
 
 .sort {
     width:300px;
-    float: right;
     margin-bottom: 2em;
 
 }
@@ -360,13 +349,6 @@ form {
     cursor: pointer;
 }
 
-#print, #export {
-    float: left;
-}
-
-#increaseCycle, #addExercise, #clearButton {
-    float: right;
-}
 
 blockquote p {
     display: inline-block;
@@ -396,12 +378,13 @@ blockquote p {
     margin-right: 20px;
 }
 
-.fRight {
-    float: right;
+
+.floatLeft {
+    float: left;
 }
 
-.fLeft {
-    float: left;
+.floatRight {
+    float: right;
 }
 
 .topBar {
@@ -424,13 +407,11 @@ blockquote p {
 .newsLeft {
     width: 33.3333333333%;
     clear: none;
-    float: left;
 }
 
 .newsRight {
     width: 66.6666666667%;
     clear: none;
-    float: left;
     padding-left: 20px;
 }
 

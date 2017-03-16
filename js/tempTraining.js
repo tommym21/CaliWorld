@@ -287,7 +287,7 @@ function addExItem(id) {
     }
 
 
-    string += '<div class="exItem" ><div style="display: inline-block;"><h4 id="title' +exCount+ '">' +item.title+ '</h4><h5 >'+sets+': </h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="1" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div style="float:right;font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>';
+    string += '<div class="exItem" ><div class="floatLeft" style="display: inline-block;"><h4 id="title' +exCount+ '">' +item.title+ '</h4><h5 >'+sets+': </h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="1" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div class="floatRight" style="font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>';
 
 
     // $('#routineWrap').append(string);
@@ -459,7 +459,7 @@ function popLoadModal(){
             string += '<p><input class="loadRadio" type="radio" name="loadRadio" value="' + pageData['savedRoutines'][i].routineName + '" ><label style="display:inline-block;" for="' + pageData['savedRoutines'][i].routineName + '" >' + pageData['savedRoutines'][i].routineName + '</label><br /></p>';
         }
 
-        string += '<button id="loadSel" class="button special" onclick ="loadRoutine();">Load</button><a id="loadClose" class="button nyroModalClose" href="#">Cancel</a>';
+        string += '<div style="margin-top: 10px;"><button id="loadSel" class="button special floatLeft" onclick ="loadRoutine();">Load</button><a style="margin-bottom: -22px;" id="loadClose" class="button nyroModalClose floatRight" href="#">Cancel</a></div>';
 
         document.getElementById('loadModal').innerHTML = string;
     }
@@ -514,10 +514,7 @@ function popRoutine(json){
             }
         }
 
-
-
-
-        html += '<div class="exItem" ><div style="display: inline-block;"><h4 id="title' +exCount+ '">' + name + '</h4><h5 >'+setContent+': ' +sets+ '</h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="' + routine.Routine[i].Sets + '" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div style="float:right;font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>'
+        html += '<div class="exItem" ><div class="floatLeft" style="display: inline-block;"><h4 id="title' +exCount+ '">' + name + '</h4><h5 >'+setContent+': ' +sets+ '</h5><div style="margin: 0 auto;"><button id="decrease' +exCount+ '" class="button special disabled" style="display: inline-block;" onclick="decreaseRep(this.id, \'exercise' +exCount+ '\' );" >-</button><input id="exercise' +exCount+ '" type="text" style="width: 73px;text-align: center;display: inline-block;" value="' + routine.Routine[i].Sets + '" disabled/><button id="increase' +exCount+ '" class="button special" style="display: inline-block;" onclick="addRep(\'decrease' +exCount+ '\', \'exercise' +exCount+ '\');">+</button> </div></div><div class="floatRight" style="font-size:44px;"  ><i onclick="moveExItem(this.parentNode.parentNode, 1);" style="cursor: pointer;" class="icon fa-arrow-up" aria-hidden="true"></i><br/><i onclick="removeExItem(this);" style="color: red;cursor: pointer;" class="icon fa-minus-circle" aria-hidden="true"></i><br /><i onclick="moveExItem(this.parentNode.parentNode, 0);" style="cursor: pointer;" class="icon fa-arrow-down" aria-hidden="true"></i></div> <div style="clear: both;" > </div>  </div>'
         exCount += 1;
     }
 

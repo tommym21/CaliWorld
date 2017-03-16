@@ -1041,13 +1041,11 @@ body.landing #skel-layers-wrapper {
     color: inherit;
     font-size: 1em;
     height: inherit;
-    left: 1.25em;
     line-height: inherit;
     margin: 0;
     padding: 0;
     position: relative;
     top: 0;
-    float: left;
 }
 
 #header h1 span {

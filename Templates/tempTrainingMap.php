@@ -5,7 +5,7 @@
     </header>
 
     <div class="row">
-        <h4><?php  $mainName = contentSearch($trainingMapContent, 'ID', 1); echo $mainName[0]['content'] ?></h4>
+        <h4 class="floatLeft"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 1); echo $mainName[0]['content'] ?></h4>
 
         <form style="padding-top: 10px">
 

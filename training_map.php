@@ -67,7 +67,7 @@ $pageTemp = 'tempTrainingMap';
 include("Queries/trainingMapContentQueries.php");
 
 //include location Queries
-include("Queries/locationQuiries.php");
+//include("Queries/locationQueries.php");
 
 
 // Initiate the LAYOUT template view  - this will include the PAGE layout view

@@ -16,8 +16,8 @@
 
 
 
-<div class="sort">
-<h5>Sort: </h5>
+<div class="sort floatRight">
+<h5><?php  $mainName = contentSearch($trainingContent, 'ID', 28); echo $mainName[0]['content'] ?> </h5>
     <select onchange="exerciseSort(this.value, language, localeSupport);">
         <option value="body_part"  ><?php  $mainName = contentSearch($trainingContent, 'ID', 4); echo $mainName[0]['content'] ?></option>
         <option value="relevance" ><?php  $mainName = contentSearch($trainingContent, 'ID', 5); echo $mainName[0]['content'] ?></option>

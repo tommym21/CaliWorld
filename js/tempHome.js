@@ -82,7 +82,7 @@ function calendarConstruct () {
     var string='';
 
     for (var i=0;i<calendar.length;i++){
-        string += '<li><div class="box"><div class="mediaImage float"><div class="box"></div></div><div class="mediaTitle float"><ul class="alt"><li><h4>'
+        string += '<li><div class="box"><div class="mediaImage floatLeft"><div class="box"></div></div><div class="mediaTitle floatLeft"><ul class="alt"><li><h4>'
         + calendar[i].Name + '</h4></li><li>' + strings[0]['content'] +
             ': ' + calendar[i].Location + '<br />' + strings[1]['content'] +
             ': ' + calendar[i].Date + '</li></ul></div><div style="clear: both;"></div></div></li>';

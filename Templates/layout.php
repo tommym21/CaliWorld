@@ -115,6 +115,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/fonts.css" />
 
+
+
     <script>
 
 
@@ -300,21 +302,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <div id="userBar" >
-        <h1><a href="home.php"><?php  $mainName = contentSearch($layoutContent, 'ID', 3); echo $mainName[0]['content'] ?></a></h1>
+        <h1 class="floatLeft" ><a href="home.php"><?php  $mainName = contentSearch($layoutContent, 'ID', 3); echo $mainName[0]['content'] ?></a></h1>
 
         <!-- If no user logged in, display log in form:  -->
         <?php
         if(!$loggedIn) {
             ?>
 
-            <div id="userTog">
-                <button class="button" onclick="logTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 6); echo $mainName[0]['content'] ?></button>
-                <button style="margin-right: 10px;" class="button special" onclick="registerTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 7); echo $mainName[0]['content'] ?></button>
+            <div id="userTog" class="floatRight">
+                <button class="button floatRight" onclick="logTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 6); echo $mainName[0]['content'] ?></button>
+                <button style="margin-right: 10px;" class="button special floatRight" onclick="registerTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 7); echo $mainName[0]['content'] ?></button>
             </div>
 
 
             <form id='login' action='' method='post' accept-charset='UTF-8' style="display: none;">
-                <fieldset>
+                <fieldset class="floatRight">
                     <label for='username'><?php  $mainName = contentSearch($layoutContent, 'ID', 8); echo $mainName[0]['content'] ?>:</label>
                     <input type='text' name='username' id='username' maxlength="50"/>
                     <label for='password'><?php  $mainName = contentSearch($layoutContent, 'ID', 9); echo $mainName[0]['content'] ?>:</label>
@@ -327,12 +329,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </fieldset>
             </form>
 
-            <div id="errorBar" class="errorBar fRight" >
+            <div id="errorBar" class="errorBar floatRight" >
                 <?php echo $error; ?>
             </div>
 
             <form id='register' onsubmit="return validate();" action='' method='post' accept-charset='UTF-8' style="display: none;">
-                <fieldset>
+                <fieldset class="floatRight">
                     <label for='newusername'><?php  $mainName = contentSearch($layoutContent, 'ID', 8); echo $mainName[0]['content'] ?>:</label>
                     <input type='text' name='newusername' id='newusername' maxlength="50"/>
                     <label for='newpassword'><?php  $mainName = contentSearch($layoutContent, 'ID', 9); echo $mainName[0]['content'] ?>:</label>
@@ -343,7 +345,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </fieldset>
             </form>
 
-            <div id="errorBar2" class="errorBar fRight" >
+            <div id="errorBar2" class="errorBar floatRight" >
                 <?php echo $error2; ?>
             </div>
 
@@ -459,6 +461,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <link rel="stylesheet" type="text/css" href="css/global.css" />
 <script type="text/javascript" src="js/global.js"></script>
+
+<!--Langauge specific style mods-->
+<link rel="stylesheet" type="text/css" href="css/lang_styles/<?php echo $lang ?>-mods.css" />
 
 <!--include slider CSS and JS if street workout page-->
 <?php

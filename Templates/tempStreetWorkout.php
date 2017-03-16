@@ -16,7 +16,7 @@
 
 <!--    ======== Sly (slider) ============-->
 
-    <div  class="scrollWrap">
+    <div dir="ltr"  class="scrollWrap">
 
         <div class="scrollbar">
             <div class="handle">
