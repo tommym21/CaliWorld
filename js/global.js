@@ -36,7 +36,30 @@ function localeInit(reg, lang){
 
 //Sets a region preference cookie for the whole domain with optional reload param
 
-function setRegionOverride(reg, reload) {
+function setRegionOverride(reg, val, reload) {
+
+    if(reload){
+
+        $("#regOvConfirm").click(function() {
+            regOverride(reg, reload);
+        });
+
+        document.getElementById('newReg').innerHTML=val;
+
+        document.getElementById('regChange').click();
+    }
+    else {
+        var now = new Date();
+        var time = now.getTime();
+        var expireTime = time + 1000*36000;
+        var cookie = "regionOverride=" + reg + ";expires=" + expireTime + ";path=/";
+        document.cookie = cookie;
+    }
+
+
+}
+
+function regOverride(reg, reload) {
 
     var now = new Date();
     var time = now.getTime();
@@ -45,15 +68,43 @@ function setRegionOverride(reg, reload) {
     document.cookie = cookie;
 
     if(reload) {
-        alert("Region changed to: " + reg);
         window.location.reload();
     }
 
 }
 
 //Sets a language preference cookie for the whole domain with optional reload param
-function setLanguageOverride(lang, reload) {
+function setLanguageOverride(lang, val, reload) {
 
+    if(reload){
+        $("#langOvConfirm").click(function() {
+            langOverride(lang, reload);
+        });
+
+        document.getElementById('newLang').innerHTML=val;
+
+        document.getElementById('langChange').click();
+    }
+    else {
+        //Flush any routine state captured from previous language
+        localStorage.setItem('routineState', '');
+
+        var now = new Date();
+        var time = now.getTime();
+        var expireTime = time + 1000*36000;
+        var cookie = "languageOverride=" + lang + ";expires=" + expireTime + ";path=/";
+        document.cookie = cookie;
+
+
+    }
+
+
+
+
+
+}
+
+function langOverride(lang, reload){
     //Flush any routine state captured from previous language
     localStorage.setItem('routineState', '');
 
@@ -63,12 +114,9 @@ function setLanguageOverride(lang, reload) {
     var cookie = "languageOverride=" + lang + ";expires=" + expireTime + ";path=/";
     document.cookie = cookie;
 
-
     if(reload) {
-        alert("Language changed to: " + lang);
         window.location.reload();
     }
-
 
 }
 

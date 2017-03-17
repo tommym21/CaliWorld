@@ -348,7 +348,8 @@ function saveModal () {
         link.click();
     }
     else{
-        alert('Please enter a name for the routine!');
+        document.getElementById('noName').click();
+
     }
 }
 
@@ -459,7 +460,7 @@ function popLoadModal(){
             string += '<p><input class="loadRadio" type="radio" name="loadRadio" value="' + pageData['savedRoutines'][i].routineName + '" ><label style="display:inline-block;" for="' + pageData['savedRoutines'][i].routineName + '" >' + pageData['savedRoutines'][i].routineName + '</label><br /></p>';
         }
 
-        string += '<div style="margin-top: 10px;"><button id="loadSel" class="button special floatLeft" onclick ="loadRoutine();">Load</button><a style="margin-bottom: -22px;" id="loadClose" class="button nyroModalClose floatRight" href="#">Cancel</a></div>';
+        string += '<div style="margin-top: 10px;"><button id="loadSel" class="button special floatLeft" onclick ="loadRoutine();">' +loadText+ '</button><a style="margin-bottom: -22px;" id="loadClose" class="button nyroModalClose floatRight" href="#">' + closeText + '</a></div>';
 
         document.getElementById('loadModal').innerHTML = string;
     }
@@ -484,7 +485,7 @@ function loadRoutine() {
         }
     }
 
-    document.getElementById('loadClose').click();
+    document.getElementsByClassName('nyroModalBg')[0].click()
     popRoutine(routineJSON);
 }
 

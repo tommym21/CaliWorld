@@ -1,3 +1,19 @@
+//Detect browser local time
+var currentTime = new Date();
+var hours = currentTime.getHours();
+
+var timeofDay = "morning";
+if (hours >= 12) {
+        timeofDay = "afternoon";
+}
+if (hours >= 18) {
+        timeofDay = "evening";
+}
+
+
+
+
+
 var selectData;
 
 $(function ()
@@ -9,7 +25,7 @@ $(function ()
     $.ajax({
         url: 'Queries/selectQuery.php',                  //the script to call to get data
         type: 'POST',
-        data: ({lang: language}),
+        data: ({lang: language, time: timeofDay}),
         dataType: 'json',                //data format
         success: function(data)          //on recieve of reply
         {
@@ -19,6 +35,8 @@ $(function ()
             //exerciseConstruct();
             console.log(selectData);
             console.log('here');
+
+            messageConstruct(data);
         }
     });
 });
@@ -38,4 +56,8 @@ function selLangChange(lang) {
     }
 
     document.getElementById('regionInit').innerHTML = options;
+}
+
+function messageConstruct(data){
+    document.getElementById('greetingMessage').innerHTML = data.localeMessages[0]['content'];
 }

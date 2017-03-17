@@ -230,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="popInit" style="display:none">
 
         <h5>
-            Good Morning <?php  $mainName = contentSearch($layoutContent, 'ID', 11); echo $mainName[0]['content'] ?>
+            <span id="greetingMessage"></span> <?php  $mainName = contentSearch($layoutContent, 'ID', 11); echo $mainName[0]['content'] ?>
         </h5>
 
         <p>
@@ -352,7 +352,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php
         }else {
             $mainName = contentSearch($layoutContent, 'ID', 10);
-            echo '<p id="welcome">' . $login_session . '&nbsp;&nbsp;| <a id="logout" href="logout.php" >' . $mainName[0]['content'] . '</a></p>';
+            echo '<p class="floatRight" id="welcome">' . $login_session . '&nbsp;&nbsp;| <a id="logout" href="logout.php" >' . $mainName[0]['content'] . '</a></p>';
 
         }
         ?>
@@ -376,7 +376,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         foreach($languageContent as $row => $array) {
                             if ($array['Subtag'] !== $lang) {
-                                echo '<li class="' . $array['Subtag'] . '" style="whitepace:nowrap;"><span style="display:block;" onclick="setLanguageOverride(\'' . $array['Subtag'] . '\', true)" >' . $array['Name'] . '</span></li>';
+                                echo '<li class="' . $array['Subtag'] . '" style="whitepace:nowrap;"><span style="display:block;" onclick="setLanguageOverride(\'' . $array['Subtag'] . '\', \'' .$array['Name']. '\', true)" >' . $array['Name'] . '</span></li>';
                             }
 
                         }
@@ -395,7 +395,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         foreach($regionContent as $row => $array) {
                             if ($array['Reg_Sub_Tag'] !== $region) {
-                                echo '<li style="whitepace:nowrap;" ><span style="display:block;" onclick="setRegionOverride(\'' . $array['Reg_Sub_Tag'] . '\', true)" >' . $array['Name'] . '</span></li>';
+                                echo '<li style="whitepace:nowrap;" ><span style="display:block;" onclick="setRegionOverride(\'' . $array['Reg_Sub_Tag'] . '\', \'' .$array['Name']. '\', true);" >' . $array['Name'] . '</span></li>';
                             }
                         }
                         ?>
@@ -467,21 +467,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!--include slider CSS and JS if street workout page-->
 <?php
+
+if($pageTemp == "tempTraining") {
+    $loadText = contentSearch($trainingContent, 'ID', 30);
+    $cloaseText = contentSearch($trainingContent, 'ID', 25);
+    echo '<script type="text/javascript">var loadText ="' .$loadText[0]['content']. '";</script>';
+    echo '<script type="text/javascript">var closeText ="' .$cloaseText[0]['content']. '";</script>';
+}
+
 if($pageTemp == "tempStreetWorkout") {
 //        echo '<link rel="stylesheet" type="text/css" href="http://darsa.in/sly/css/ospb.css" />';
     echo '<link rel="stylesheet" type="text/css" href="css/slider-' . $lang . '.css" />';
    echo '<script type="text/javascript" src="js/sly.js"></script>';
 }
 
-if($pageTemp == "tempTraining") {
-    echo '<link rel="stylesheet" href="nyroModal-master/styles/nyroModal.css" type="text/css" media="screen" /><script type="text/javascript" src="nyroModal-master/js/jquery.nyroModal.js"></script><!--[if IE 6]><script type="text/javascript" src="nyroModal-master/js/jquery.nyroModal-ie6.min.js"></script><![endif]-->';
 
-    echo '<script type="text/javascript">
+echo '<link rel="stylesheet" href="nyroModal-master/styles/nyroModal.css" type="text/css" media="screen" /><script type="text/javascript" src="nyroModal-master/js/jquery.nyroModal.js"></script><!--[if IE 6]><script type="text/javascript" src="nyroModal-master/js/jquery.nyroModal-ie6.min.js"></script><![endif]-->';
+
+echo '<script type="text/javascript">
                 $(function() {
                     $(\'.nyroModal\').nyroModal();
                 });
-              </script>';
-}
+      </script>';
+
 
 
 ?>
@@ -499,8 +507,37 @@ if($pageTemp == "tempTraining") {
 <!--include page AJAX-->
 <?php echo "<script src='js/" . $pageTemp . ".js'></script>" ?>
 
+<a id="langChange" style="display:none;" class="button special nyroModal " href="#langModal" ></a>
+<a id="regChange" style="display:none;" class="button special nyroModal " href="#regModal" ></a>
 
 
+<!------------ LANG change load modal ----------------->
+<div id="langModal" style="display: none;width: 600px;">
+
+    <div style="margin: 0 auto;">
+        <h4><?php  $mainName = contentSearch($layoutContent, 'ID', 24); echo $mainName[0]['content'] ?></h4>
+
+        <button id="langOvConfirm" class="button special" onclick=""><?php  $mainName = contentSearch($layoutContent, 'ID', 26); echo $mainName[0]['content'] ?></button>
+        <a id='loadClose' class="button nyroModalClose" href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 27); echo $mainName[0]['content'] ?></a>
+    </div>
+
+
+</div>
+<!------------------------------------------------->
+
+<!------------ REGION change load modal ----------------->
+<div id="regModal" style="display: none;width: 600px;">
+
+    <div style="margin: 0 auto;">
+        <h4><?php  $mainName = contentSearch($layoutContent, 'ID', 25); echo $mainName[0]['content'] ?></h4>
+
+        <button id="regOvConfirm" class="button special" onclick=""><?php  $mainName = contentSearch($layoutContent, 'ID', 26); echo $mainName[0]['content'] ?></button>
+        <a id='regClose' class="button nyroModalClose" href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 27); echo $mainName[0]['content'] ?></a>
+    </div>
+
+
+</div>
+<!------------------------------------------------->
 
 
 </html>

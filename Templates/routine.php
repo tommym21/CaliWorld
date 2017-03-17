@@ -57,7 +57,7 @@
 
 
 
-
+<a id="noName" style="display:none;" class="nyroModal" href="#rnameModal" onclick="cycleModal();"></a>
 
 
 
@@ -129,6 +129,20 @@
 
         <a id='clearClose' class="button nyroModalClose floatRight" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
         <button class="button special floatLeft" onclick="clearRoutine();"><?php  $mainName = contentSearch($trainingContent, 'ID', 17); echo $mainName[0]['content'] ?></button>
+    </div>
+
+
+</div>
+<!------------------------------------------------->
+
+<!------------ Routine Name modal ----------------->
+<div id="rnameModal" style="display: none;width: 600px;">
+
+    <div style="margin: 0 auto;">
+        <h4><?php  $mainName = contentSearch($trainingContent, 'ID', 29); echo $mainName[0]['content'] ?></h4>
+
+        <a class="button nyroModalClose floatRight" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 30); echo $mainName[0]['content'] ?></a>
+
     </div>
 
 

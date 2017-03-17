@@ -9,6 +9,7 @@ if(!(function_exists('db_connect'))){
 }
 
 $selectContent = array();
+$localeMessages = array();
 
 //--------------------------------------------------------------------------
 // 2) Query database for data
@@ -30,12 +31,35 @@ else {
 
 }
 
+
+
+
+$localeQuery = "SELECT * FROM `LocaleMesages` WHERE `lang_sub_tag`='" .$_POST['lang']. "' AND `time`='" .$_POST['time']. "'";
+$localeResult = db_query($localeQuery);
+
+if($localeResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $localeResult->fetch_assoc()) {
+
+        array_push($localeMessages, $row);
+    }
+
+
+}
+
 //--------------------------------------------------------------------------
 // 3) echo result as json
 //--------------------------------------------------------------------------
 
 if(isset($selectContent)){
     $return['selectList'] = $selectContent;
+}
+
+if(isset($localeMessages)){
+    $return['localeMessages'] = $localeMessages;
 }
 
 

@@ -23,6 +23,14 @@ $reqLang = new Language();
 $reqLang->set($_SERVER['HTTP_ACCEPT_LANGUAGE'], $region);
 $lang=$reqLang->get()['lang_sub_tag'];
 
+header("Content-Type: text/html; charset=utf-8");
+header("Vary: Accept-Language");
+header("Accept-Language: " .$lang. ";q=1");
+$_SERVER['HTTP_ACCEPT_LANGUAGE'] = $lang;
+
+
+
+
 //Initiate base direction
 $dir=$reqLang->get()['dir'];
 
