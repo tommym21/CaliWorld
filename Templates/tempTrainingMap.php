@@ -9,25 +9,28 @@
 
         <form style="padding-top: 10px">
 
-            <div class="pod">
-                <input type="checkbox" id="park" name="park" checked onchange="mapSearch();">
-                <label for="park"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 2); echo $mainName[0]['content'] ?></label>
-
-                <div style="clear: both;padding-bottom: 45px;"></div>
+            <div class="cPod pod">
+                <div class="chWrap">
+                    <input type="checkbox" id="park" name="park" checked onchange="mapSearch();">
+                    <label for="park"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 2); echo $mainName[0]['content'] ?></label>
+                </div>
+                <div class="cClear" style="clear: both;padding-bottom: 45px;"></div>
             </div>
 
-            <div class="pod">
-                <input type="checkbox" id="trainingequiptment" name="trainingequiptment" onchange="mapSearch();" >
-                <label for="trainingequiptment"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 3); echo $mainName[0]['content'] ?></label>
-
-                <div style="clear: both;padding-bottom: 45px;"></div>
+            <div class="cPod pod">
+                <div class="chWrap">
+                    <input type="checkbox" id="trainingequiptment" name="trainingequiptment" onchange="mapSearch();" >
+                    <label for="trainingequiptment"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 3); echo $mainName[0]['content'] ?></label>
+                </div>
+                <div class="cClear" style="clear: both;padding-bottom: 45px;"></div>
             </div>
 
-            <div class="pod">
-                <input type="checkbox" id="affiliate" name="affiliate" onchange="mapSearch();" >
-                <label for="affiliate"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 4); echo $mainName[0]['content'] ?></label>
-
-                <div style="clear: both;padding-bottom: 45px;"></div>
+            <div class="cPod pod">
+                <div class="chWrap">
+                     <input type="checkbox" id="affiliate" name="affiliate" onchange="mapSearch();" >
+                    <label for="affiliate"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 4); echo $mainName[0]['content'] ?></label>
+                </div>
+                <div class="cClear" style="clear: both;padding-bottom: 45px;"></div>
             </div>
 
         </form>

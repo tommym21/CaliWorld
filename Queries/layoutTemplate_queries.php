@@ -72,6 +72,26 @@ else {
 
 }
 
+$regionMessages = array();
+
+//Gets the content in the correct language for the main layout template
+$regMessQuery = "SELECT `id`, `reg_sub_tag`, `content` FROM `RegionMessages` WHERE `reg_sub_tag`='" . $region . "'";
+$regMessResult = db_query($regMessQuery);
+
+if($regMessResult === false) {
+    $error = db_error();
+    // Handle error - inform administrator, log to file, show error page, etc.
+}
+else {
+    while($row = $regMessResult->fetch_assoc()) {
+
+        array_push($regionMessages, $row);
+    }
+
+
+}
+
+
 
 
 

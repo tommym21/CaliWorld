@@ -95,8 +95,8 @@
                 <h4><?php  $mainName = contentSearch($trainingContent, 'ID', 24); echo $mainName[0]['content'] ?></h4>
 
 
-            <a id='saveClose' class="button nyroModalClose floatRight" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
-                <button style="float: left;" type="submit" class="button special floatLeft" onclick="routineSave(login_user);"><?php  $mainName = contentSearch($trainingContent, 'ID', 10); echo $mainName[0]['content'] ?></button>
+            <a id='saveClose' class="button nyroModalClose floatRight no" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
+                <button style="float: left;" type="submit" class="button special floatLeft yes" onclick="routineSave(login_user);"><?php  $mainName = contentSearch($trainingContent, 'ID', 10); echo $mainName[0]['content'] ?></button>
 
         </div>
 
@@ -113,7 +113,7 @@
     <div style="margin: 0 auto;">
         <h4><?php  $mainName = contentSearch($trainingContent, 'ID', 23); echo $mainName[0]['content'] ?></h4>
 
-        <a id='loadClose' class="button nyroModalClose" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
+        <a id='loadClose' class="button nyroModalClose no" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
     </div>
 
 
@@ -127,8 +127,8 @@
         <h4><?php  $mainName = contentSearch($trainingContent, 'ID', 21); echo $mainName[0]['content'] ?></h4>
         <p><?php  $mainName = contentSearch($trainingContent, 'ID', 22); echo $mainName[0]['content'] ?></p>
 
-        <a id='clearClose' class="button nyroModalClose floatRight" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
-        <button class="button special floatLeft" onclick="clearRoutine();"><?php  $mainName = contentSearch($trainingContent, 'ID', 17); echo $mainName[0]['content'] ?></button>
+        <a id='clearClose' class="button nyroModalClose no floatRight" href="#"><?php  $mainName = contentSearch($trainingContent, 'ID', 25); echo $mainName[0]['content'] ?></a>
+        <button class="button special floatLeft yes" onclick="clearRoutine();"><?php  $mainName = contentSearch($trainingContent, 'ID', 17); echo $mainName[0]['content'] ?></button>
     </div>
 
 

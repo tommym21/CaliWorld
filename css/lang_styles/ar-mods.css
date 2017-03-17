@@ -21,6 +21,7 @@
 
 #userBar > H1 {
     padding-right: 50px !important;
+    padding-left: 0px !important;
 }
 
 .mediaTitle {
@@ -66,4 +67,8 @@ table th {
 blockquote {
     border-right: solid 4px rgba(144, 144, 144, 0.25) !important;
     border-left:none !important;
+}
+
+#header nav > ul > li {
+    margin-left: 0 !important;
 }

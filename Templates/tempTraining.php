@@ -1,12 +1,12 @@
 <div class="container firstContainer">
 
     <div class="row uniform">
-        <div class="6u 12u(3)">
+        <div class="trainHead floatLeft 6u 12u(3)">
             <div id="Exersizes" class="box active" onclick="contentToggle(this.id);tabSwitch(this.id);">
                 <h3><?php  $mainName = contentSearch($trainingContent, 'ID', 1); echo $mainName[0]['content'] ?></h3>
             </div>
         </div>
-        <div  class="6u 12u(3)">
+        <div  class="trainHead floatLeft 6u 12u(3)">
             <div id="Routine" class="box" onclick="contentToggle(this.id);tabSwitch(this.id);" >
                 <h3><?php  $mainName = contentSearch($trainingContent, 'ID', 2); echo $mainName[0]['content'] ?></h3>
             </div>

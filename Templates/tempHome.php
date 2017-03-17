@@ -1,6 +1,6 @@
 <!-- Banner -->
 <div class="bannerWrap">
-    <section id="banner">
+    <section  id="banner">
         <div class="inner wrap">
             <p>
                 <?php  $content = contentSearch($homeContent, 'id', '5'); echo $content[0]['content'] ?>
@@ -169,3 +169,4 @@
         </div>
     </div>
 </section>
+

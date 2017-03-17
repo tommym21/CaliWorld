@@ -112,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 
     <!--Cali Styles-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-<?php echo $region ?>.css" />
     <link rel="stylesheet" type="text/css" href="css/fonts.css" />
 
 
@@ -310,7 +310,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
 
             <div id="userTog" class="floatRight">
-                <button class="button floatRight" onclick="logTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 6); echo $mainName[0]['content'] ?></button>
+                <button class="button floatRight transparent" onclick="logTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 6); echo $mainName[0]['content'] ?></button>
                 <button style="margin-right: 10px;" class="button special floatRight" onclick="registerTog()"><?php  $mainName = contentSearch($layoutContent, 'ID', 7); echo $mainName[0]['content'] ?></button>
             </div>
 
@@ -361,7 +361,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
 
-    <div class="localeWrap">
+    <div class="localeWrap floatRight">
 
 
 
@@ -459,7 +459,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 
-<link rel="stylesheet" type="text/css" href="css/global.css" />
+
 <script type="text/javascript" src="js/global.js"></script>
 
 <!--Langauge specific style mods-->
@@ -477,7 +477,7 @@ if($pageTemp == "tempTraining") {
 
 if($pageTemp == "tempStreetWorkout") {
 //        echo '<link rel="stylesheet" type="text/css" href="http://darsa.in/sly/css/ospb.css" />';
-    echo '<link rel="stylesheet" type="text/css" href="css/slider-' . $lang . '.css" />';
+    echo '<link rel="stylesheet" type="text/css" href="css/slider-en.css" />';
    echo '<script type="text/javascript" src="js/sly.js"></script>';
 }
 
@@ -517,8 +517,8 @@ echo '<script type="text/javascript">
     <div style="margin: 0 auto;">
         <h4><?php  $mainName = contentSearch($layoutContent, 'ID', 24); echo $mainName[0]['content'] ?></h4>
 
-        <button id="langOvConfirm" class="button special" onclick=""><?php  $mainName = contentSearch($layoutContent, 'ID', 26); echo $mainName[0]['content'] ?></button>
-        <a id='loadClose' class="button nyroModalClose" href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 27); echo $mainName[0]['content'] ?></a>
+        <button id="langOvConfirm" class="button special yes" onclick=""><?php  $mainName = contentSearch($layoutContent, 'ID', 26); echo $mainName[0]['content'] ?></button>
+        <a id='loadClose' class="button nyroModalClose no" href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 27); echo $mainName[0]['content'] ?></a>
     </div>
 
 
@@ -531,8 +531,8 @@ echo '<script type="text/javascript">
     <div style="margin: 0 auto;">
         <h4><?php  $mainName = contentSearch($layoutContent, 'ID', 25); echo $mainName[0]['content'] ?></h4>
 
-        <button id="regOvConfirm" class="button special" onclick=""><?php  $mainName = contentSearch($layoutContent, 'ID', 26); echo $mainName[0]['content'] ?></button>
-        <a id='regClose' class="button nyroModalClose" href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 27); echo $mainName[0]['content'] ?></a>
+        <button id="regOvConfirm" class="button special yes" onclick=""><?php  $mainName = contentSearch($layoutContent, 'ID', 26); echo $mainName[0]['content'] ?></button>
+        <a id='regClose' class="button nyroModalClose no" href="#"><?php  $mainName = contentSearch($layoutContent, 'ID', 27); echo $mainName[0]['content'] ?></a>
     </div>
 
 
