@@ -85,8 +85,9 @@ function calendarConstruct () {
         string += '<li><div class="box"><div class="mediaImage floatLeft"><div class="box"></div></div><div class="mediaTitle floatLeft"><ul class="alt"><li><h4>'
         + calendar[i].Name + '</h4></li><li>' + strings[0]['content'] +
             ': ' + calendar[i].Location + '<br />' + strings[1]['content'] +
-            ': ' + calendar[i].Date + '</li></ul></div><div style="clear: both;"></div></div></li>';
+            ': <br /><span class="date">' + formatDate(dateShortFormat, calendar[i].Date) + '</span></li></ul></div><div style="clear: both;"></div></div></li>';
     }
 
     $('#calendarList').html(string);
 }
+

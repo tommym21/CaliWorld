@@ -1015,6 +1015,7 @@ body.landing #skel-layers-wrapper {
     /*height: 3em;*/
     left: 0;
     line-height: 3em;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -1499,6 +1500,7 @@ iFrame {
     -moz-border-radius:0 !important;
     border-radius:0 !important;
     padding:0 !important;
+    margin-top: 135px;
 }
 
 .wrap {
@@ -1604,7 +1606,7 @@ li {
 }
 
 .firstContainer {
-    margin-top:70px;
+    margin-top: 200px;
 }
 
 #footer {

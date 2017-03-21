@@ -1019,6 +1019,7 @@ body.landing #skel-layers-wrapper {
     cursor: default;
     /*height: 3em;*/
     left: 0;
+    position: fixed;
     line-height: 3em;
     top: 0;
     width: 100%;
@@ -1504,6 +1505,7 @@ iFrame {
     -moz-border-radius:0 !important;
     border-radius:0 !important;
     padding:0 !important;
+    margin-top: 135px;
 }
 
 .wrap {
@@ -1544,7 +1546,11 @@ li {
 }
 
 
-
+.newsPod {
+    width:33.333333%;
+    clear: none;
+    float: left;
+}
 
 .podHead {
     position: absolute;
@@ -1605,7 +1611,7 @@ li {
 }
 
 .firstContainer {
-    margin-top:70px;
+    margin-top: 200px;
 }
 
 #footer {

@@ -154,6 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
 
+
             var logShow = <?php echo $logShow; ?>;
             var registerShow = <?php echo $registerShow; ?>;
 
@@ -163,6 +164,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if(registerShow){
                 document.getElementById('register').style.display = 'block';
             }
+
+
+
 
         });
 

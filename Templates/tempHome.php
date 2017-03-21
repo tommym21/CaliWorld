@@ -27,7 +27,7 @@
         </header>
 
         <div class="row">
-            <div class="pod">
+            <div class="pod newsPod">
                 <div class="box post">
                     <div class="image fit">
                         <div class="podHead">
@@ -79,7 +79,7 @@
 
                 </div>
             </div>
-            <div class="pod">
+            <div class="pod newsPod">
                 <div class="box post">
                     <div class="image fit">
                         <div class="podHead">
@@ -99,7 +99,7 @@
 
                 </div>
             </div>
-            <div class="pod">
+            <div class="pod newsPod">
 
                 <div class="box post">
                     <div class="image fit">

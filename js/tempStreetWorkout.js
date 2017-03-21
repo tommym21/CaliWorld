@@ -74,7 +74,7 @@ function loadCompetitions(data){
             string += '<tr >' +
                         '<td><a target="_blank" href=" '+ comps[i].Link +'">'+ comps[i].Name +'</a></td>' +
                         '<td>'+ comps[i].Location +'</td>' +
-                        '<td>'+ comps[i].Date +'</td>' +
+                        '<td>'+ formatDate(dateShortFormat, comps[i].Date) +'</td>' +
                         '</tr> ';
     }
 

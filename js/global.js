@@ -232,3 +232,131 @@ function maskChange(ele, trigg){
     mask.value = stringMask;
 
 }
+
+
+var dateShortFormat ='';
+
+
+$(function ()
+{
+
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({
+        url: 'Queries/dateQuery.php',                  //the script to call to get data
+        type: 'POST',
+        data: ({region: region}),
+        dataType: 'json',                //data format
+        success: function(data)          //on recieve of reply
+        {
+            console.log('Date Short: ');
+            console.log(data);
+            dateShortFormat = data['dateFormat'][0]['date_short'];
+
+        }
+    });
+});
+
+
+
+function formatDate(format, date){
+    console.log('now');
+
+    var result ='';
+    var format = format.toLowerCase();
+    var component = '';
+    var lastFormat = '';
+
+
+    for(var i=0;i<format.length+1;i++) {
+
+        if (format[i] == 'y' || format[i] =='m' || format[i] =='d'){
+
+            component += format[i];
+
+
+        }
+    else {
+            if(component != '') result += printComponent(component, date);
+            component = '';
+            if(format[i] != undefined) result += format[i];
+
+        }
+
+    }
+
+
+    return result;
+    // prints the localised date string
+
+}
+
+
+function printComponent(component, date) {
+
+    // LOOKS UP THE NEXT REQUIRES CHARACTER FROM A GIVEN COMPONENT OF A JAVASCRIPT DATE
+
+    var date = new Date(date);
+
+
+    var ref;
+
+
+    switch(component[0]) {
+        case 'd':
+            ref = date.getDate().toString();
+            break;
+        case 'm':
+            ref = (date.getMonth()+1).toString();
+            break;
+        case'y':
+            ref = reverse(date.getFullYear().toString());
+            break;
+    }
+
+
+    if(component[0] != 'y'){
+        var length = component.length;
+        if(ref.length < component.length) {
+            ref = '0' + ref;
+        }
+    }
+    else {
+        ref = ref.substring(0,component.length);
+        ref = reverse(ref);
+    }
+
+    return ref;
+
+}
+
+String.prototype.splice = function(idx, rem, str) {
+    return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+};
+
+
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+
+function reverseYear(format, date){
+
+    var year = '';
+    var newDate = date;
+
+    for(var i=0;i<format.length;i++) {
+        if(format[i] == 'y') year += date[i];
+    }
+
+    reverse(year);
+
+    for(var i=0;i<format.length;i++) {
+        if(format[i] == 'y') newDate[i] = year[i];
+    }
+
+    return newDate;
+}
+
+
+

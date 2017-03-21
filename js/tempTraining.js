@@ -113,7 +113,7 @@ function exerciseConstruct () {
 
     for (var i=0;i<exercises.length;i++){
         rest = (5 - parseInt(exercises[i].difficulty));
-        string += '<div class="pod"><div id="exBox" class="box post scroll" >' +
+        string += '<div class="pod newsPod"><div id="exBox" class="box post scroll" >' +
             '<div class="mediaImage float"><img src="Images/' + exercises[i].image + '" ></div>' +
             '<div class="mediaTitle float"><h4>' + exercises[i].title + '</h4></div>' +
             '<div class="mediaContent" >' + exercises[i].body_part + '<br />' + exercises[i].summary + '</div>' +
