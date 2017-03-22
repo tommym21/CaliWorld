@@ -20,9 +20,12 @@ class language
     // Function to set values in an array
     public function set($langHeader, $region)
     {
+
         $this->region = $region;
 
         $this->values = array();
+
+
 
         //Check if language override cookie exists
         if(isset($_COOKIE['languageOverride'])) {
@@ -81,22 +84,89 @@ class language
 
         }
 
-        //If no supported language is returned based on the user browser language preferences, lookup the default language for their region
-        $languageFallBackQuery = "SELECT `Subtag` AS 'lang_sub_tag',`dir`  FROM `Region` JOIN `Lang_Sub_Tag` ON `Lang_Sub_Tag`.Subtag = `Region`.`default_lang` WHERE `Region`.Reg_Sub_Tag = '" . strtolower($this->region) . "'";
-        $fallbackResult = db_select($languageFallBackQuery);
-        if (!($fallbackResult === false)) {
-            if (array_key_exists(0, $fallbackResult)) {
-                return $fallbackResult[0];
-//                $fallbackResult[0]['lang_sub_tag'];
-                //                        $result[0]['dir'];
-            }
+        //If no supported language returned from browser preferences - then default to the language based on the IDN
+        $dirname = dirname($_SERVER['PHP_SELF']);
+        $result = array();
 
+        switch ($dirname) {
+            case "/收音机体操":
+                $languageQuery = "SELECT `Subtag` AS 'lang_sub_tag', `dir` FROM `Lang_Sub_Tag` WHERE `Subtag`='cmn'";
+                $result = db_select($languageQuery);
+
+                if (!($result === false)) {
+                    if (array_key_exists(0, $result)) {
+                        //Return the first supported language (tag)
+                        return $result[0];
+//                        $result[0]['lang_sub_tag'];
+                        //                        $result[0]['dir'];
+                    }
+
+                }
+                break;
+            case "/كاليسثينيكسورلد":
+                $languageQuery = "SELECT `Subtag` AS 'lang_sub_tag', `dir` FROM `Lang_Sub_Tag` WHERE `Subtag`='ar'";
+                $result = db_select($languageQuery);
+
+                if (!($result === false)) {
+                    if (array_key_exists(0, $result)) {
+                        //Return the first supported language (tag)
+                        return $result[0];
+//                        $result[0]['lang_sub_tag'];
+                        //                        $result[0]['dir'];
+                    }
+
+                }
+                break;
+            case "/CalisthenicsWelt":
+                $languageQuery = "SELECT `Subtag` AS 'lang_sub_tag', `dir` FROM `Lang_Sub_Tag` WHERE `Subtag`='de'";
+                $result = db_select($languageQuery);
+
+                if (!($result === false)) {
+                    if (array_key_exists(0, $result)) {
+                        //Return the first supported language (tag)
+                        return $result[0];
+//                        $result[0]['lang_sub_tag'];
+                        //                        $result[0]['dir'];
+                    }
+
+                }
+                break;
+            case "/칼리 스테 네스 월드":
+                $languageQuery = "SELECT `Subtag` AS 'lang_sub_tag', `dir` FROM `Lang_Sub_Tag` WHERE `Subtag`='ko'";
+                $result = db_select($languageQuery);
+
+                if (!($result === false)) {
+                    if (array_key_exists(0, $result)) {
+                        //Return the first supported language (tag)
+                        return $result[0];
+//                        $result[0]['lang_sub_tag'];
+                        //                        $result[0]['dir'];
+                    }
+
+                }
+                break;
+            default:
+                //If no supported language is returned based on the user browser language preferences, lookup the default language for their region
+                $languageFallBackQuery = "SELECT `Subtag` AS 'lang_sub_tag',`dir`  FROM `Region` JOIN `Lang_Sub_Tag` ON `Lang_Sub_Tag`.Subtag = `Region`.`default_lang` WHERE `Region`.Reg_Sub_Tag = '" . strtolower($this->region) . "'";
+                $fallbackResult = db_select($languageFallBackQuery);
+                if (!($fallbackResult === false)) {
+                    if (array_key_exists(0, $fallbackResult)) {
+                        return $fallbackResult[0];
+//                $fallbackResult[0]['lang_sub_tag'];
+                        //                        $result[0]['dir'];
+                    }
+
+                }
+                break;
         }
 
-        //If no default supported languages found for visitors region , fall back to en
-        $result[0]['lang_sub_tag'] = 'en';
-        $result[0]['dir'] = 'ltr';
-        return $result;
+
+
+
+
+
+
+
     }
 
 

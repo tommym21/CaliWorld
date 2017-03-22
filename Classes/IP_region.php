@@ -35,10 +35,11 @@ class IP_region
                     foreach (explode(',', $_SERVER[$key]) as $ip) {
                         if (filter_var($ip, FILTER_VALIDATE_IP) !== false) {
 
-//                            $this->ip = $ip; //<<-- real IP address
-                            $this->ip = '163.177.112.32';  //<<--- TEST IP ADREESS, region = cn
+                         //$this->ip = $ip; //<<-- real IP address
+                            //$this->ip = '163.177.112.32';  //<<--- TEST IP ADREESS, region = cn
                             //$this->ip = '54.152.222.43';  //<<--- TEST IP ADREESS, region = usa
-                            //$this->ip = '128.199.221.37';  //<<--- TEST IP ADREESS, region = indonesia (unsupported)
+                            //$this->ip = '211.220.194.0';  //<<--- TEST IP ADREESS, region = South Korea
+                            $this->ip = '128.199.221.37';  //<<--- TEST IP ADREESS, region = indonesia (unsupported)
                         }
                         else $this->ip = 'Not found';
                     }
@@ -48,7 +49,84 @@ class IP_region
 
             if($this->ip == 'Not found') {
                 //if ip is not found, region fallsback to en
-                $this->region='uk';
+
+                //Fall back to region for IDN lang here
+
+//                $this->region='uk';
+
+
+
+                //If no supported language returned from browser preferences - then default to the language based on the IDN
+                $dirname = dirname($_SERVER['PHP_SELF']);
+                $result = array();
+
+                switch ($dirname) {
+                    case "/收音机体操":
+                        $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='cmn'";
+                        $result = db_select($languageQuery);
+
+                        if (!($result === false)) {
+                            if (array_key_exists(0, $result)) {
+                                //Return the first supported language (tag)
+                                $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                //                        $result[0]['dir'];
+                            }
+
+                        }
+                        break;
+                    case "/كاليسثينيكسورلد":
+                        $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='ar'";
+                        $result = db_select($languageQuery);
+
+                        if (!($result === false)) {
+                            if (array_key_exists(0, $result)) {
+                                //Return the first supported language (tag)
+                                $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                //                        $result[0]['dir'];
+                            }
+
+                        }
+                        break;
+                    case "/CalisthenicsWelt":
+                        $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='de'";
+                        $result = db_select($languageQuery);
+
+                        if (!($result === false)) {
+                            if (array_key_exists(0, $result)) {
+                                //Return the first supported language (tag)
+                                $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                //                        $result[0]['dir'];
+                            }
+
+                        }
+                        break;
+                    case "/칼리 스테 네스 월드":
+                        $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='ko'";
+                        $result = db_select($languageQuery);
+
+                        if (!($result === false)) {
+                            if (array_key_exists(0, $result)) {
+                                //Return the first supported language (tag)
+                                $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                //                        $result[0]['dir'];
+                            }
+
+                        }
+                        break;
+                    default:
+                        //
+                        $this->region = 'uk';
+
+                        break;
+                }
+
+
+
+
 
             }
             else {
@@ -82,7 +160,81 @@ class IP_region
                         $this->region = $geoResult[0]['Reg_Sub_Tag'];
                     }
                     else {
-                        $this->region = 'uk';
+
+                        //Fall back to region for IDN lang here
+
+//                        $this->region = 'uk';
+
+
+                        //If no supported language returned from browser preferences - then default to the language based on the IDN
+                        $dirname = dirname($_SERVER['PHP_SELF']);
+
+                        switch ($dirname) {
+                            case "/收音机体操":
+                                $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='cmn'";
+                                $result = db_select($languageQuery);
+
+                                if (!($result === false)) {
+                                    if (array_key_exists(0, $result)) {
+                                        //Return the first supported language (tag)
+                                        $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                        //                        $result[0]['dir'];
+                                    }
+
+                                }
+                                break;
+                            case "/كاليسثينيكسورلد":
+                                $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='ar'";
+                                $result = db_select($languageQuery);
+
+                                if (!($result === false)) {
+                                    if (array_key_exists(0, $result)) {
+                                        //Return the first supported language (tag)
+                                        $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                        //                        $result[0]['dir'];
+                                    }
+
+                                }
+                                break;
+                            case "/CalisthenicsWelt":
+                                $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='de'";
+                                $result = db_select($languageQuery);
+
+                                if (!($result === false)) {
+                                    if (array_key_exists(0, $result)) {
+                                        //Return the first supported language (tag)
+                                        $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                        //                        $result[0]['dir'];
+                                    }
+
+                                }
+                                break;
+                            case "/칼리 스테 네스 월드":
+                                $languageQuery = "SELECT `Reg_Sub_Tag`  FROM `Region` WHERE `default_lang`='ko'";
+                                $result = db_select($languageQuery);
+
+                                if (!($result === false)) {
+                                    if (array_key_exists(0, $result)) {
+                                        //Return the first supported language (tag)
+                                        $this->region = $result[0]['Reg_Sub_Tag'];
+//                        $result[0]['lang_sub_tag'];
+                                        //                        $result[0]['dir'];
+                                    }
+
+                                }
+                                break;
+                            default:
+                                //
+                                $this->region = 'uk';
+
+                                break;
+                        }
+
+
+
                     }
 
                 }

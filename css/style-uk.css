@@ -1766,3 +1766,23 @@ blockquote p {
 .button.special.no:hover {
     background-color: #e0555a !important;
 }
+
+
+
+/*need to apple to only the mask field:*/
+
+/*input,*/
+/*textarea {*/
+    /*font-size: 24px;*/
+    /*padding: 10px;*/
+
+    /*color: red !important;*/
+    /*text-shadow: 0px 0px 0px #000 !important;*/
+    /*-webkit-text-fill-color: transparent !important;*/
+/*}*/
+/*input::-webkit-input-placeholder,*/
+/*textarea::-webkit-input-placeholder{*/
+    /*color:*/
+    /*text-shadow: none !important;*/
+    /*-webkit-text-fill-color: initial !important;*/
+/*}*/
