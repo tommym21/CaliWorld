@@ -45,10 +45,13 @@ $(function ()
 function selLangChange(lang) {
     var options;
 
-    //Empty the select list
+    //Store the current region select list value
+    var regVal = document.getElementById('regionInit').value
+
+    //Empty the region select list of options
     document.getElementById('regionInit').innerHTML = '';
 
-    //Repopulate the select list with data in the newly selected language
+    //Repopulate the select list options with data in the newly selected language
     for(var i=0;i<selectData.selectList.length;i++) {
         if(selectData.selectList[i].Lang == lang) {
             options += '<option style="whitepace:nowrap;" value="' + selectData.selectList[i].Reg_Sub_Tag + '"><span style="display:block;" >' + selectData.selectList[i].Name + '</span></option>'
@@ -56,6 +59,7 @@ function selLangChange(lang) {
     }
 
     document.getElementById('regionInit').innerHTML = options;
+    document.getElementById('regionInit').value = regVal;
 }
 
 function messageConstruct(data){

@@ -339,6 +339,16 @@ function loadModal () {
 
 }
 
+function rnoNameModal () {
+
+    var link = document.getElementById('noName');
+    link.click();
+
+}
+
+
+rnameModal
+
 function saveModal () {
     var link = document.getElementById('save');
 
@@ -442,7 +452,7 @@ function exportRoutine() {
         win.document.body.innerHTML = JSON;
     }
     else{
-        alert('Please enter a name for the routine!');
+        rnoNameModal();
     }
 
 }
@@ -470,7 +480,7 @@ function popLoadModal(){
 // FUNCTION TO POPULATE GET THE ROUTINE JSON OF THE SELECTED ROUTINE
 function loadRoutine() {
     var radios = document.getElementsByName('loadRadio');
-    var routineName;
+    var routineName = '';
     var routineJSON;
 
     for(var i=0;i<radios.length;i++){
@@ -478,6 +488,8 @@ function loadRoutine() {
             routineName = radios[i].value;
         }
     }
+
+    if(routineName == "") return;
 
     for(var i=0;i<pageData['savedRoutines'].length;i++){
         if(pageData['savedRoutines'][i].routineName === routineName){

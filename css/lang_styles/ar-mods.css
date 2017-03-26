@@ -80,3 +80,7 @@ row>* {
 .pod {
     float: right !important;
 }
+
+.secondLabel {
+    padding: 29px 0px !important;
+}

@@ -9,10 +9,10 @@
 
         <form style="padding-top: 10px">
 
-            <div class="cPod pod">
+            <div class="cPodFirst cPod pod">
                 <div class="chWrap">
                     <input type="checkbox" id="park" name="park" checked onchange="mapSearch();">
-                    <label for="park"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 2); echo $mainName[0]['content'] ?></label>
+                    <label class="firstLabel" for="park"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 2); echo $mainName[0]['content'] ?></label>
                 </div>
                 <div class="cClear" style="clear: both;padding-bottom: 45px;"></div>
             </div>
@@ -20,7 +20,7 @@
             <div class="cPod pod">
                 <div class="chWrap">
                     <input type="checkbox" id="trainingequiptment" name="trainingequiptment" onchange="mapSearch();" >
-                    <label for="trainingequiptment"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 3); echo $mainName[0]['content'] ?></label>
+                    <label class="secondLabel" for="trainingequiptment"><?php  $mainName = contentSearch($trainingMapContent, 'ID', 3); echo $mainName[0]['content'] ?></label>
                 </div>
                 <div class="cClear" style="clear: both;padding-bottom: 45px;"></div>
             </div>
@@ -48,6 +48,6 @@
 </div>
 
 <script src="js/locations.js"></script>
-<script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyDh6moMbUVUvoe2BZ3DMOCF2xjJ7OPG4Pc&language=<?php echo $lang ?>"></script>
+<script src="https://maps.google.com/maps/api/js?v=3&libraries=geometry&key=AIzaSyB3_s6thwuN8_dMLplHXTqbLG2NVmRl2oI"></script>
 <script src="Maplace/maplace.min.js"></script>
 

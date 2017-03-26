@@ -27,12 +27,15 @@ function constructNews(data) {
     var news = data['news'];
 
     for(var i=0; i<news.length; i++){
+        var date = formatDate(dateShortFormat, news[i].date);
         string +='<blockquote style="cursor:pointer;" onclick="javascript:window.open("'+news[i].link+'", "_blank");">' +
                  '<div class="newsLeft floatLeft"><section id="sidebar">' +
                  '<img class="newsImg" src="Images/'+news[i].image+'" alt=""></a> </section> </div>' +
                  '<div class="newsRight floatRight">' +
                  '<h4>'+news[i].title+'</h4>'+
-                 '<p>'+news[i].description+'</p></div><div style="clear:both;"></div></blockquote>';
+                 '<p id="date">' + date + '</p>' +
+                 '<p>'+news[i].description+'</p>' +
+                 '</div><div style="clear:both;"></div></blockquote>';
     }
 
     box.innerHTML=string;

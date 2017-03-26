@@ -25,3 +25,6 @@ function mapSearch() {
 
 }
 
+$( document ).ready(function() {
+    mapSearch();
+});

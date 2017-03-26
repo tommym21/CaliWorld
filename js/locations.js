@@ -95,15 +95,13 @@ function locationConstruct(data){
         "_parks_training_affiliate": parks_training_affiliates
     };
 
-    if(window.location.pathname == "/CaliWorld/training_map.php"){
-        console.log('ready');
-        console.log(parks);
+
         new Maplace({
             show_markers: true,
             locations: parks,
             controls_on_map: false,zoom: 1
         }).Load();
-    }
+
 
 }
 

@@ -35,11 +35,11 @@ class IP_region
                     foreach (explode(',', $_SERVER[$key]) as $ip) {
                         if (filter_var($ip, FILTER_VALIDATE_IP) !== false) {
 
-                         //$this->ip = $ip; //<<-- real IP address
+                         $this->ip = $ip; //<<-- real IP address
                             //$this->ip = '163.177.112.32';  //<<--- TEST IP ADREESS, region = cn
                             //$this->ip = '54.152.222.43';  //<<--- TEST IP ADREESS, region = usa
                             //$this->ip = '211.220.194.0';  //<<--- TEST IP ADREESS, region = South Korea
-                            $this->ip = '128.199.221.37';  //<<--- TEST IP ADREESS, region = indonesia (unsupported)
+                            //$this->ip = '128.199.221.37';  //<<--- TEST IP ADREESS, region = indonesia (unsupported)
                         }
                         else $this->ip = 'Not found';
                     }
