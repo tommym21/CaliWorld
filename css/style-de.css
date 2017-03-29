@@ -319,7 +319,19 @@ textarea {
     padding: 0.75em 1em;
 }
 
+.go {
+    display: inline-block !important;
+    width:auto !important;
+}
 
+.button.go {
+    padding: 10px !important;
+    line-height: 11px;
+}
+
+.exSearch, .sort {
+    padding:0 10px 0 10px !important;
+}
 
 ::-webkit-input-placeholder {
     color: #949494 !important;
@@ -1646,7 +1658,6 @@ li {
 }
 
 .sort {
-    width:300px;
     margin-bottom: 2em;
 
 }
@@ -1742,4 +1753,8 @@ blockquote p {
 .newsImg {
     width: 100%;
     padding-right: 20px;
+}
+
+.goDrop {
+    width: 247px !important;
 }

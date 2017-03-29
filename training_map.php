@@ -1,5 +1,5 @@
 <?php
-
+$pageID = '4';
 
 
 /**
@@ -42,6 +42,9 @@ $regName;
 
 //include layout queries queries
 include("Queries/layoutTemplate_queries.php");
+
+//include page title queries
+include("Queries/webPageQueries.php");
 
 
 

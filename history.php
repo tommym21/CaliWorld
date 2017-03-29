@@ -1,5 +1,5 @@
 <?php
-
+$pageID = '2';
 
 
 //include global functions
@@ -32,8 +32,8 @@ $regName;
 
 
 
-//include layout queries queries
-include("Queries/layoutTemplate_queries.php");
+//include page title queries
+include("Queries/webPageQueries.php");
 
 //include layout queries queries
 include("Queries/layoutTemplate_queries.php");

@@ -93,7 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <head>
-
+    <title><?php  $pageTitle = contentSearch($pageTitles, 'id', $pageID); echo $pageTitle[0]['title'] ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
@@ -215,10 +215,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </script>
-
-
-    <title>[@title]</title>
-
 
 </head>
 

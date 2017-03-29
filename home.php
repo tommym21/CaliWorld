@@ -1,5 +1,5 @@
 <?php
-
+$pageID = '1';
 
 //include global functions
 include("global.php");
@@ -39,6 +39,9 @@ $regName;
 
 //include layout queries queries
 include("Queries/layoutTemplate_queries.php");
+
+//include page title queries
+include("Queries/webPageQueries.php");
 
 
 //initiiate language NAME

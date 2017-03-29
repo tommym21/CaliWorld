@@ -325,6 +325,20 @@ textarea {
     padding: 0.75em 1em;
 }
 
+.go {
+    display: inline-block !important;
+    width:auto !important;
+}
+
+.button.go {
+    padding: 10px !important;
+    line-height: 11px;
+}
+
+.exSearch, .sort {
+    padding:0 10px 0 10px !important;
+}
+
 
 
 ::-webkit-input-placeholder {
@@ -1657,7 +1671,6 @@ li {
 }
 
 .sort {
-    width:300px;
     margin-bottom: 2em;
 
 }
@@ -1769,6 +1782,10 @@ blockquote p {
 
 .button.special.no:hover {
     background-color: #e0555a !important;
+}
+
+.goDrop {
+    width: 247px !important;
 }
 
 

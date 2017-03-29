@@ -320,6 +320,20 @@ textarea {
 }
 
 
+.go {
+    display: inline-block !important;
+    width:auto !important;
+}
+
+.button.go {
+    padding: 10px !important;
+    line-height: 11px;
+}
+
+.exSearch, .sort {
+    padding:0 10px 0 10px !important;
+}
+
 
 ::-webkit-input-placeholder {
     color: #949494 !important;
@@ -1186,7 +1200,7 @@ body.landing #skel-layers-wrapper {
 
 #banner {
     background-color: #494d53;
-    background-image: url("../Images/calisthenicsukimage.jpg");
+    background-image: url("../Images/cali_us.jpg");
     /*background-position: top left,					center center;*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -1646,7 +1660,6 @@ li {
 }
 
 .sort {
-    width:300px;
     margin-bottom: 2em;
 
 }
@@ -1742,4 +1755,8 @@ blockquote p {
 .newsImg {
     width: 100%;
     padding-right: 20px;
+}
+
+.goDrop {
+    width: 247px !important;
 }

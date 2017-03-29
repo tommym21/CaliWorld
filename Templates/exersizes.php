@@ -16,15 +16,23 @@
 
 
 
-<div class="sort floatRight">
-<h5><?php  $mainName = contentSearch($trainingContent, 'ID', 28); echo $mainName[0]['content'] ?> </h5>
-    <select onchange="exerciseSort(this.value, language, localeSupport);">
-        <option value="body_part"  ><?php  $mainName = contentSearch($trainingContent, 'ID', 4); echo $mainName[0]['content'] ?></option>
-        <option value="relevance" ><?php  $mainName = contentSearch($trainingContent, 'ID', 5); echo $mainName[0]['content'] ?></option>
-        <option value="difficulty" ><?php  $mainName = contentSearch($trainingContent, 'ID', 3); echo $mainName[0]['content'] ?></option>
-    </select>
+    <div class="sort floatRight">
+    <h5 class="go"><?php  $mainName = contentSearch($trainingContent, 'ID', 28); echo $mainName[0]['content'] ?> </h5>
+        <select  class="go goDrop" onchange="exerciseSort(this.value, language, localeSupport);">
+            <option value="body_part"  ><?php  $mainName = contentSearch($trainingContent, 'ID', 4); echo $mainName[0]['content'] ?></option>
+            <option value="relevance" ><?php  $mainName = contentSearch($trainingContent, 'ID', 5); echo $mainName[0]['content'] ?></option>
+            <option value="difficulty" ><?php  $mainName = contentSearch($trainingContent, 'ID', 3); echo $mainName[0]['content'] ?></option>
+        </select>
 
-</div>
+    </div>
+
+    <div class="exSearch floatRight">
+        <h5 class="go"><?php  $mainName = contentSearch($trainingContent, 'ID', 32); echo $mainName[0]['content'] ?></h5>
+            <input dir="<?php echo $dir ?>" lang="en" id="term" onkeyup="searchForm()" type="text" class="go" />
+    </div>
+
+
+
 
 <div class="row" id="exercises">
 <!--    <div class="pod">-->

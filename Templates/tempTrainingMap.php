@@ -1,4 +1,4 @@
-<div class="container firstContainer">
+<div class="container firstContainer mapFirstContainer">
 
     <header class="major">
         <p><?php  $mainName = contentSearch($trainingMapContent, 'ID', 5); echo $mainName[0]['content'] ?></p>
@@ -39,7 +39,7 @@
 
 </div>
 
-<div class="container">
+<div class="container mapSecondContainer">
 
 
 

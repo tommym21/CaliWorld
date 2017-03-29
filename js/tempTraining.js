@@ -133,6 +133,9 @@ function exerciseConstruct () {
     $('#exercises').html(string);
 }
 
+
+
+
 function routineConstruct () {
     var string = '<ul>';
     var rest;
@@ -347,7 +350,7 @@ function rnoNameModal () {
 }
 
 
-rnameModal
+
 
 function saveModal () {
     var link = document.getElementById('save');
@@ -599,9 +602,115 @@ function nameChange() {
 
 
 
-$( document ).ready(function() {
+function exSearch(term) {
+    //-----------------------------------------------------------------------
+    // 2) Send a http request with AJAX to determin if Arabic script is present
+    //-----------------------------------------------------------------------
+    $.ajax({
+        url: 'Queries/regExp.php',                  //the script to call to get data
+        type: 'POST',
+        data: ({arMatch: term}),
+        dataType: 'json',                //data format
+        success: function(data)          //on recieve of reply
+        {
+
+            console.log(data['arMatch']);
+            if(parseInt(data['arMatch'])){
+                //Arabic script is present
+                $("#term").attr("dir", "rtl");
+            }
+            else {
+                //Arabic script is not present
+                $("#term").attr("dir", "ltr");
+
+            }
 
 
 
 
-});
+
+
+        }
+    });
+
+
+
+    //-----------------------------------------------------------------------
+    //  Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+    //-----------------------------------------------------------------------
+    $.ajax({
+        url: 'Queries/searchQuery.php',                  //the script to call to get data
+        type: 'POST',
+        data: ({term: term}),
+        dataType: 'json',                //data format
+        success: function(data)          //on recieve of reply
+        {
+
+            searchConstruct(data);
+        }
+    });
+
+
+}
+
+
+
+function searchConstruct(data) {
+    var string='';
+    var rest;
+
+
+    for(var x=0;x<data['searchResults'].length;x++){
+
+        for (var i=0;i<exercises.length;i++){
+
+
+
+            if(exercises[i].id == data['searchResults'][x]['id']){
+                console.log(data['searchResults'][x]['id']);
+
+
+
+                rest = (5 - parseInt(exercises[i].difficulty));
+                string += '<div class="pod newsPod"><div id="exBox" class="box post scroll" >' +
+                    '<div class="mediaImage float"><img src="Images/' + exercises[i].image + '" ></div>' +
+                    '<div class="mediaTitle float"><h4>' + exercises[i].title + '</h4></div>' +
+                    '<div class="mediaContent" >' + exercises[i].body_part + '<br />' + exercises[i].summary + '</div>' +
+                    '<br /><div class="rating"><h5>' + difficulty + ':</h5>';
+
+                for(var z = 0;z < exercises[i].difficulty;z++){
+                    string += '<span style="color:red">☆</span>';
+                }
+
+                for(var y =0;y<rest;y++){
+                    string += '<span>☆</span>';
+                }
+
+                string += '</div><div style="clear:both;"></div></div></div>';
+
+
+
+            }
+        }
+
+            console.log('here');
+
+    }
+
+    $('#exercises').html(string);
+}
+
+
+
+function searchForm() {
+
+    if ($("#term").val() != undefined) {
+        //if search term defined
+
+        exSearch($("#term").val());
+
+    }
+
+
+}
+
